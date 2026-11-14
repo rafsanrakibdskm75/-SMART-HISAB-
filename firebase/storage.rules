@@ -1,0 +1,48 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function business(businessId) {
+      return firestore.get(/databases/(default)/documents/businesses/$(businessId));
+    }
+
+    function isOwner(businessId) {
+      return signedIn() && business(businessId).data.ownerUid == request.auth.uid;
+    }
+
+    function isActiveMember(businessId) {
+      return signedIn()
+        && firestore.exists(/databases/(default)/documents/businesses/$(businessId)/members/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/businesses/$(businessId)/members/$(request.auth.uid)).data.active == true;
+    }
+
+    function canRead(businessId) {
+      return isOwner(businessId) || isActiveMember(businessId);
+    }
+
+    match /businesses/{businessId}/people/{personId}/{fileName} {
+      allow read: if canRead(businessId);
+      allow create: if (isOwner(businessId)
+          || (isActiveMember(businessId)
+            && firestore.get(/databases/(default)/documents/businesses/$(businessId)/members/$(request.auth.uid)).data.role in ['manager', 'staff']))
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow update, delete: if false;
+    }
+
+    match /businesses/{businessId}/backups/{backupId}/{fileName} {
+      allow read: if isOwner(businessId);
+      allow create: if isOwner(businessId)
+        && request.resource.size < 100 * 1024 * 1024
+        && request.resource.contentType in ['application/gzip', 'application/octet-stream'];
+      allow update, delete: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

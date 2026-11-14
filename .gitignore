@@ -1,0 +1,195 @@
+
+# ==========================================
+# SMART HISAB
+# Flutter Cross-Platform Git Ignore
+# Android | iOS | Windows | Linux | Web
+# ==========================================
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
+.atom/
+.history/
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+
+# VS Code
+# Keep VS Code project settings tracked
+#.vscode/
+
+# ==========================================
+# Flutter & Dart
+# ==========================================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.flutter_tool_state
+
+# ==========================================
+# Gradle Cache
+# ==========================================
+.gradle/
+.gradle-build-home/
+**/.gradle/
+**/.gradle-build-home/
+**/wrapper/dists/
+*.zip.part
+
+# Keep Gradle Wrapper files
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# ==========================================
+# Android
+# ==========================================
+/android/local.properties
+/android/.gradle/
+/android/.kotlin/
+/android/build/
+/android/app/build/
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+
+# Android generated files
+*.apk
+*.aab
+*.ap_
+*.dex
+*.hprof
+
+# Android signing secrets
+/android/key.properties
+*.jks
+*.keystore
+
+# ==========================================
+# iOS
+# ==========================================
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/flutter_export_environment.sh
+/ios/ServiceDefinitions.json
+/ios/Runner/GeneratedPluginRegistrant.*
+/ios/Pods/
+/ios/.symlinks/
+/ios/build/
+/ios/Flutter/.last_build_id
+
+# Xcode generated files
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Keep Xcode project configuration
+# Do not ignore *.xcodeproj or *.xcworkspace
+
+# ==========================================
+# Windows
+# ==========================================
+/windows/flutter/ephemeral/
+/windows/flutter/generated_plugin_registrant.cc
+/windows/flutter/generated_plugins.cmake
+/windows/flutter/CMakeFiles/
+/windows/flutter/runner/CMakeFiles/
+/windows/build/
+/windows/runner/Debug/
+/windows/runner/Release/
+/windows/runner/Profile/
+*.exe
+*.msi
+*.pdb
+*.obj
+*.lib
+*.dll
+
+# ==========================================
+# Linux
+# ==========================================
+/linux/flutter/ephemeral/
+/linux/flutter/generated_plugin_registrant.cc
+/linux/flutter/generated_plugins.cmake
+/linux/flutter/CMakeFiles/
+/linux/build/
+*.so
+*.o
+
+# ==========================================
+# Web
+# ==========================================
+/web/.dart_tool/
+/web/build/
+
+# ==========================================
+# macOS
+# ==========================================
+/macos/Flutter/GeneratedPluginRegistrant.swift
+/macos/Flutter/ephemeral/
+/macos/Pods/
+/macos/build/
+
+# ==========================================
+# Firebase Debug Logs
+# ==========================================
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# ==========================================
+# Secrets & Environment
+# ==========================================
+.env
+.env.*
+!.env.example
+secrets/
+credentials.json
+service-account*.json
+
+# ==========================================
+# Test & Temporary Artifacts
+# ==========================================
+/test-results/
+/test-output/
+tmp/
+temp/
+*.cache
+*.pid
+
+# ==========================================
+# Flutter Widget Preview
+# ==========================================
+.widget_preview/
+
+# ==========================================
+# Symbolication & Obfuscation
+# ==========================================
+app.*.symbols
+app.*.map.json

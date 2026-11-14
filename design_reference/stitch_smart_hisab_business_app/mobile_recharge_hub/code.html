@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>মোবাইল রিচার্জ ড্যাশবোর্ড - মেসার্স রহমান ট্রেডার্স</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#86d0f3",
+            "surface-container-high": "#ddece2",
+            "on-primary-fixed": "#002114",
+            "surface-tint": "#176b4d",
+            "primary-fixed-dim": "#89d6b1",
+            "primary": "#005138",
+            "on-primary-container": "#9ae9c3",
+            "on-tertiary-fixed-variant": "#743230",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#005138",
+            "on-error": "#ffffff",
+            "on-surface": "#121e18",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d8e6dc",
+            "inverse-surface": "#27332d",
+            "tertiary-fixed-dim": "#ffb3af",
+            "secondary": "#006685",
+            "secondary-fixed": "#bfe9ff",
+            "surface-container": "#e3f1e7",
+            "on-error-container": "#93000a",
+            "surface-bright": "#effdf3",
+            "outline-variant": "#bec9c1",
+            "on-surface-variant": "#3f4943",
+            "primary-fixed": "#a4f3cc",
+            "on-tertiary-container": "#ffcdca",
+            "tertiary-container": "#924946",
+            "primary-container": "#176b4d",
+            "surface-variant": "#d8e6dc",
+            "on-primary": "#ffffff",
+            "background": "#effdf3",
+            "on-tertiary-fixed": "#3c0709",
+            "secondary-container": "#91dbff",
+            "tertiary": "#753230",
+            "surface-container-low": "#e9f7ed",
+            "surface-dim": "#cfddd4",
+            "inverse-on-surface": "#e6f4ea",
+            "inverse-primary": "#89d6b1",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#001f2a",
+            "on-secondary-container": "#00617f",
+            "tertiary-fixed": "#ffdad7",
+            "outline": "#6f7a73",
+            "surface": "#effdf3",
+            "on-background": "#121e18",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#004d65"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-md": "0.75rem",
+            "margin-mobile": "0.875rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-2xs": "0.125rem"
+          },
+          "fontFamily": {
+            "title-sm": ["Noto Sans"],
+            "headline-lg-mobile": ["Inter"],
+            "body-lg": ["Noto Sans"],
+            "label-lg": ["Inter"],
+            "title-md": ["Noto Sans"],
+            "currency-display": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Noto Sans"],
+            "label-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-sm": ["Noto Sans"]
+          },
+          "fontSize": {
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F6F8F7] text-on-surface antialiased flex justify-center min-h-screen">
+<!-- Mobile Container (Max 390px layout) -->
+<div class="w-full max-w-[390px] min-h-screen bg-background relative flex flex-col pb-[92px] shadow-2xl">
+<!-- TOP APP BAR (Shared Component Anchor) -->
+<header class="bg-surface-container-lowest sticky top-0 z-40 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<!-- Leading Store Avatar -->
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-title-sm ring-1 ring-primary/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-title-md font-title-md font-semibold text-on-surface leading-tight tracking-tight">মেসার্স রহমান ট্রেডার্স</h1>
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              অনলাইন হিসাব খাতা
+            </span>
+</div>
+</div>
+<!-- Trailing Notification & Quick Sync -->
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+<!-- Sub-header for Mobile Recharge Hub Hub -->
+<div class="px-margin-mobile pb-space-sm pt-space-xs flex items-center justify-between border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-title-sm font-title-sm text-secondary font-bold tracking-tight">মোবাইল রিচার্জ বিজনেস</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary-fixed/30 active:scale-90 transition-transform" id="refreshBtn" title="Sync Status">
+<span class="material-symbols-outlined text-[19px]" data-icon="sync">sync</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:bg-surface-container-high active:scale-90 transition-transform" title="Commission Rates &amp; Settings">
+<span class="material-symbols-outlined text-[19px]" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 px-margin-mobile pt-space-sm space-y-space-md">
+<!-- HERO METRICS CARD (Teal #267A9A theme / secondary container) -->
+<section class="bg-gradient-to-br from-[#1C5D76] to-[#267A9A] rounded-xl text-on-secondary p-space-lg shadow-[0_4px_16px_rgba(28,93,118,0.24)] relative overflow-hidden">
+<!-- Background Ambient Accent -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-24 h-24 bg-black/10 rounded-full blur-lg pointer-events-none"></div>
+<div class="relative z-10 space-y-space-md">
+<!-- Top Row of Card -->
+<div class="flex justify-between items-start">
+<div>
+<p class="text-label-md font-label-md text-secondary-fixed/90 uppercase tracking-wider font-semibold">আজকের মোট রিচার্জ বিক্রি</p>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-currency-display text-headline-lg-mobile tracking-tight">৳১৪,২৫০</span>
+<span class="text-label-sm font-label-sm text-secondary-fixed-dim bg-white/10 px-1.5 py-0.5 rounded">৭৩টি মোট</span>
+</div>
+</div>
+<!-- Commission Pill badge -->
+<div class="bg-primary-fixed/20 border border-primary-fixed/30 backdrop-blur-sm px-2.5 py-1.5 rounded-lg text-right">
+<span class="text-label-sm font-label-sm text-primary-fixed block font-medium">অর্জিত কমিশন</span>
+<span class="text-title-sm font-title-sm text-white font-bold tracking-tight">+৳৫৭০</span>
+</div>
+</div>
+<!-- Secondary Metrics Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1 border-t border-white/15">
+<div class="bg-black/15 rounded-lg p-2">
+<span class="text-label-sm font-label-sm text-white/70 block">ক্রয় মূল্য (সিম স্টক)</span>
+<span class="text-body-md font-currency-display text-white font-semibold">৳১৩,৬৮০</span>
+</div>
+<div class="bg-black/15 rounded-lg p-2">
+<span class="text-label-sm font-label-sm text-white/70 block">গড় মুনাফার হার</span>
+<span class="text-body-md font-label-lg text-secondary-fixed font-bold">৪.০% প্রফিট</span>
+</div>
+</div>
+<!-- Success Rate Tracker -->
+<div class="bg-white/10 rounded-lg p-2.5 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed" data-icon="check_circle">check_circle</span>
+<span class="text-white/90 font-medium">সাকসেস রেট: <strong class="text-white font-bold font-label-lg">৯৮.৫%</strong></span>
+</div>
+<span class="text-label-sm font-label-sm text-white/80">৭২ সফল • ১ পেন্ডিং • ০ ব্যর্থ</span>
+</div>
+</div>
+</section>
+<!-- FAST ACTION BAR (Tactile Dual Actions) -->
+<section class="grid grid-cols-1 gap-2">
+<button class="w-full h-12 bg-primary hover:bg-[#00432e] text-on-primary rounded-xl font-title-sm font-semibold flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(0,81,56,0.28)] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="dialpad">dialpad</span>
+<span>⚡ দ্রুত রিচার্জ করুন (Quick Recharge)</span>
+</button>
+<button class="w-full h-10 bg-surface-container-lowest border border-outline-variant/60 hover:bg-surface-container-low text-primary rounded-xl font-label-lg font-semibold flex items-center justify-center gap-1.5 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+<span>ব্যালেন্স রিফিল / সিম স্টক কিনুন</span>
+</button>
+</section>
+<!-- OPERATOR BALANCES & STOCK GRID (5 Operators) -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="sim_card">sim_card</span>
+<h2 class="text-title-sm font-title-sm text-on-surface font-bold">অপারেটর ব্যালেন্স ও স্টক (৫টি)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-outline">সর্বমোট: ৳১৭,৮২০</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- 1. Grameenphone (GP) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm border border-[#00A9E0]/30 shadow-sm relative overflow-hidden">
+<div class="w-1.5 h-full bg-[#00A9E0] absolute left-0 top-0"></div>
+<div class="pl-1.5 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-[#007EA7]">জিপি ফ্লেক্সিলোড</span>
+<span class="text-[10px] font-bold text-white bg-[#00A9E0] px-1 rounded">GP</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">বর্তমান ব্যালেন্স</span>
+<p class="text-title-sm font-headline-sm text-on-surface font-bold">৳৬,৪৫০</p>
+</div>
+<div class="pt-1 border-t border-outline-variant/20 flex justify-between text-[11px] text-on-surface-variant font-medium">
+<span>আজকের বিক্রি:</span>
+<span class="font-semibold text-primary">৳৬,২০০ (৩১টি)</span>
+</div>
+</div>
+</div>
+<!-- 2. Robi -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm border border-[#ED1C24]/30 shadow-sm relative overflow-hidden">
+<div class="w-1.5 h-full bg-[#ED1C24] absolute left-0 top-0"></div>
+<div class="pl-1.5 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-[#C1121F]">রবি ইজিলোড</span>
+<span class="text-[10px] font-bold text-white bg-[#ED1C24] px-1 rounded">Robi</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">বর্তমান ব্যালেন্স</span>
+<p class="text-title-sm font-headline-sm text-on-surface font-bold">৳৪,৮০০</p>
+</div>
+<div class="pt-1 border-t border-outline-variant/20 flex justify-between text-[11px] text-on-surface-variant font-medium">
+<span>আজকের বিক্রি:</span>
+<span class="font-semibold text-primary">৳৩,৯৫০ (১৯টি)</span>
+</div>
+</div>
+</div>
+<!-- 3. Banglalink -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm border border-[#FF6600]/30 shadow-sm relative overflow-hidden">
+<div class="w-1.5 h-full bg-[#FF6600] absolute left-0 top-0"></div>
+<div class="pl-1.5 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-[#D35400]">বাংলালিংক পাওয়ার</span>
+<span class="text-[10px] font-bold text-white bg-[#FF6600] px-1 rounded">BL</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">বর্তমান ব্যালেন্স</span>
+<p class="text-title-sm font-headline-sm text-on-surface font-bold">৳৩,১৫০</p>
+</div>
+<div class="pt-1 border-t border-outline-variant/20 flex justify-between text-[11px] text-on-surface-variant font-medium">
+<span>আজকের বিক্রি:</span>
+<span class="font-semibold text-primary">৳২,৪০০ (১২টি)</span>
+</div>
+</div>
+</div>
+<!-- 4. Airtel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm border border-[#E40000]/30 shadow-sm relative overflow-hidden">
+<div class="w-1.5 h-full bg-[#E40000] absolute left-0 top-0"></div>
+<div class="pl-1.5 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-[#B30000]">এয়ারটেল লোড</span>
+<span class="text-[10px] font-bold text-white bg-[#E40000] px-1 rounded">Airtel</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">বর্তমান ব্যালেন্স</span>
+<p class="text-title-sm font-headline-sm text-on-surface font-bold">৳১,৯২০</p>
+</div>
+<div class="pt-1 border-t border-outline-variant/20 flex justify-between text-[11px] text-on-surface-variant font-medium">
+<span>আজকের বিক্রি:</span>
+<span class="font-semibold text-primary">৳১,১০০ (৬টি)</span>
+</div>
+</div>
+</div>
+<!-- 5. Teletalk (Flashload) - Full Width or Spanned -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl p-space-sm border border-[#00923F]/30 shadow-sm relative overflow-hidden">
+<div class="w-1.5 h-full bg-[#00923F] absolute left-0 top-0"></div>
+<div class="pl-2 flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm font-bold text-[#007532]">টেলিটক ফ্ল্যাশলোড</span>
+<span class="text-[9px] font-bold text-white bg-[#00923F] px-1 rounded">Teletalk</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">ব্যালেন্স:</span>
+<span class="text-title-sm font-headline-sm text-on-surface font-bold">৳১,৫০০</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">আজকের বিক্রি</span>
+<span class="text-label-lg font-label-lg font-bold text-primary">৳৬০০ (৪টি)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RECENT RECHARGE TRANSACTIONS LIST -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="receipt_long">receipt_long</span>
+<h2 class="text-title-sm font-title-sm text-on-surface font-bold">সাম্প্রতিক রিচার্জ ট্রানজেকশন</h2>
+</div>
+<button class="text-label-sm font-label-sm text-secondary hover:underline font-semibold">সব দেখুন</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 divide-y divide-outline-variant/30 shadow-sm">
+<!-- Item 1: GP -->
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container-low/50 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-[#00A9E0]/15 text-[#007EA7] flex items-center justify-center font-bold text-label-sm border border-[#00A9E0]/30">
+                GP
+              </div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md font-semibold text-on-surface">০১৭২২-৪৫৬৭৮৯</span>
+<span class="text-[9px] font-semibold bg-surface-container-high text-on-surface-variant px-1 rounded">প্রিপেইড</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span>২ মিনিট আগে</span>
+<span>•</span>
+<span class="text-[#00875A] font-medium">লাভ ৳৪.০০</span>
+</div>
+</div>
+</div>
+<div class="text-right space-y-0.5">
+<span class="text-title-sm font-currency-display font-bold text-on-surface">৳১০০</span>
+<span class="inline-flex items-center gap-0.5 text-[10px] font-bold text-[#00875A] bg-[#DCFCE7] px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="check">check</span>
+                সফল
+              </span>
+</div>
+</div>
+<!-- Item 2: Robi -->
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container-low/50 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-[#ED1C24]/15 text-[#C1121F] flex items-center justify-center font-bold text-label-sm border border-[#ED1C24]/30">
+                Robi
+              </div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md font-semibold text-on-surface">০১৮১১-৯৮৭৬৫৪</span>
+<span class="text-[9px] font-semibold bg-secondary-fixed/50 text-secondary px-1 rounded">মিনিট বান্ডেল</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span>১৫ মিনিট আগে</span>
+<span>•</span>
+<span class="text-[#00875A] font-medium">লাভ ৳৮.৫০</span>
+</div>
+</div>
+</div>
+<div class="text-right space-y-0.5">
+<span class="text-title-sm font-currency-display font-bold text-on-surface">৳২০০</span>
+<span class="inline-flex items-center gap-0.5 text-[10px] font-bold text-[#00875A] bg-[#DCFCE7] px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="check">check</span>
+                সফল
+              </span>
+</div>
+</div>
+<!-- Item 3: Banglalink Pending -->
+<div class="p-space-sm flex items-center justify-between bg-amber-50/40 hover:bg-amber-50/80 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-[#FF6600]/15 text-[#D35400] flex items-center justify-center font-bold text-label-sm border border-[#FF6600]/30">
+                BL
+              </div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md font-semibold text-on-surface">০১৯১২-৩৪৫৬৭৮</span>
+<span class="text-[9px] font-semibold bg-amber-100 text-amber-900 px-1 rounded">স্পেশাল অফার</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-amber-700">
+<span class="material-symbols-outlined text-[12px] animate-spin" data-icon="progress_activity">progress_activity</span>
+<span>ট্রানজেকশন প্রক্রিয়াধীন</span>
+</div>
+</div>
+</div>
+<div class="text-right space-y-0.5">
+<span class="text-title-sm font-currency-display font-bold text-on-surface">৳৫০</span>
+<span class="inline-flex items-center gap-0.5 text-[10px] font-bold text-[#B45309] bg-[#FEF3C7] px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="hourglass_top">hourglass_top</span>
+                পেন্ডিং
+              </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SIM STOCK WARNING OR NOTICE -->
+<section class="bg-surface-container-high/60 border border-outline-variant/50 rounded-xl p-space-sm flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="info">info</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-tight">
+          টেলিটক ও এয়ারটেল ব্যালেন্স ২০০০ টাকার নিচে। নিরবচ্ছিন্ন সার্ভিসের জন্য দ্রুত স্টক রিফিল করুন।
+        </p>
+</section>
+</main>
+<!-- FLOATING ACTION SHORTCUT: QUICK LOAD (Styled in Emerald Forest) -->
+<div class="fixed bottom-[74px] left-0 right-0 max-w-[390px] mx-auto px-margin-mobile pointer-events-none z-40 flex justify-end">
+<button class="pointer-events-auto bg-[#176B4D] hover:bg-[#12583e] text-white px-4 h-12 rounded-full font-title-sm font-semibold flex items-center gap-1.5 shadow-[0_8px_24px_rgba(23,107,77,0.32)] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+<span>+ রিচার্জ</span>
+</button>
+</div>
+<!-- BOTTOM NAVBAR (Shared Component Blueprint) -->
+<!-- Destinations: [হোম, হিসাব, গ্রাহক, রিপোর্ট, মেনু] -->
+<!-- Active State: 'মেনু' (Mobile Recharge Hub / Menu Category) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs h-16 bg-surface-container-lowest shadow-[0_-2px_6px_rgba(23,35,29,0.06)]">
+<!-- 1. হোম (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">হোম</span>
+</a>
+<!-- 2. হিসাব (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm">হিসাব</span>
+</a>
+<!-- 3. গ্রাহক (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="group">group</span>
+<span class="text-label-sm font-label-sm">গ্রাহক</span>
+</a>
+<!-- 4. রিপোর্ট (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="bar_chart">bar_chart</span>
+<span class="text-label-sm font-label-sm">রিপোর্ট</span>
+</a>
+<!-- 5. মেনু (ACTIVE - Matching Recharge Hub Intent) -->
+<a class="flex flex-col items-center justify-center text-primary bg-surface-container rounded-full px-space-md py-space-xs font-semibold hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu">menu</span>
+<span class="text-label-sm font-label-sm">মেনু</span>
+</a>
+</nav>
+</div>
+<!-- Micro Interaction Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const refreshBtn = document.getElementById('refreshBtn');
+      if (refreshBtn) {
+        refreshBtn.addEventListener('click', () => {
+          const icon = refreshBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.classList.add('animate-spin');
+            setTimeout(() => {
+              icon.classList.remove('animate-spin');
+            }, 800);
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

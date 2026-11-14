@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>নতুন ব্যক্তিগত খরচ এন্ট্রি | স্মার্ট হিসাব (Smart Hisab)</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#176b4d",
+            "tertiary": "#753230",
+            "inverse-on-surface": "#e6f4ea",
+            "surface-container-high": "#ddece2",
+            "on-tertiary-fixed-variant": "#743230",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#89d6b1",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#3c0709",
+            "tertiary-container": "#924946",
+            "on-background": "#121e18",
+            "tertiary-fixed-dim": "#ffb3af",
+            "secondary-fixed": "#bfe9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#cfddd4",
+            "on-primary-fixed": "#002114",
+            "surface-container": "#e3f1e7",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#001f2a",
+            "background": "#effdf3",
+            "primary-container": "#176b4d",
+            "surface-container-low": "#e9f7ed",
+            "on-surface": "#121e18",
+            "secondary-container": "#91dbff",
+            "outline-variant": "#bec9c1",
+            "on-primary-fixed-variant": "#005138",
+            "primary-fixed": "#a4f3cc",
+            "on-primary-container": "#9ae9c3",
+            "error": "#ba1a1a",
+            "inverse-surface": "#27332d",
+            "primary": "#005138",
+            "secondary-fixed-dim": "#86d0f3",
+            "surface-variant": "#d8e6dc",
+            "secondary": "#006685",
+            "inverse-primary": "#89d6b1",
+            "on-secondary-fixed-variant": "#004d65",
+            "on-tertiary-container": "#ffcdca",
+            "on-surface-variant": "#3f4943",
+            "surface-bright": "#effdf3",
+            "on-primary": "#ffffff",
+            "surface": "#effdf3",
+            "surface-container-highest": "#d8e6dc",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#00617f",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f7a73",
+            "tertiary-fixed": "#ffdad7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-xl": "1.5rem",
+            "space-2xs": "0.125rem",
+            "space-lg": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "margin-mobile": "0.875rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "body-sm": ["Noto Sans"],
+            "currency-display": ["Inter"],
+            "label-md": ["Inter"],
+            "title-sm": ["Noto Sans"],
+            "title-md": ["Noto Sans"],
+            "label-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Noto Sans"],
+            "headline-lg-mobile": ["Inter"],
+            "body-md": ["Noto Sans"],
+            "label-sm": ["Inter"],
+            "headline-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbar for category and chip carousels */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F6F8F7] text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (Optimized for 360px - 430px) -->
+<main class="w-full max-w-[430px] bg-[#F6F8F7] min-h-screen relative flex flex-col shadow-xl">
+<!-- 1. Header Bar (Sub-page linear form: Suppresses global bottom nav shell per rules) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest border-b border-[#E4EAE6] px-margin-mobile py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="ফিরে যান" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-1.5">
+<h1 class="text-title-sm font-title-md font-bold text-on-surface">নতুন ব্যক্তিগত খরচ</h1>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-semibold">ব্যক্তিগত লেজার</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-tight">দোকানের হিসাব থেকে পৃথক ব্যক্তিগত লেজার</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-90 transition-all text-primary" id="infoTooltipBtn" title="তথ্য সহায়িকা" type="button">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</button>
+</header>
+<!-- Contextual Help Banner (Financial Isolation Guarantee) -->
+<section class="bg-primary-fixed/25 border-b border-primary/10 px-margin-mobile py-space-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">verified_user</span>
+<p class="text-body-sm font-body-sm text-primary leading-normal">
+<strong class="font-semibold">নির্ভুল হিসাব নিশ্চয়তা:</strong> ব্যক্তিগত খরচের হিসাব দোকানের বাণিজ্যিক নিট মুনাফা বা ব্যবসায়িক ব্যয়ের সাথে মিলবে না।
+      </p>
+</section>
+<!-- Scrollable Form Body with Mandatory Bottom Clearance (88px) -->
+<form class="p-margin-mobile space-y-space-lg pb-32">
+<!-- 2. Amount Input (টাকার পরিমাণ) Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-lg shadow-[0px_1px_3px_rgba(23,35,29,0.04)]">
+<div class="flex justify-between items-center mb-space-xs">
+<label class="text-body-md font-title-sm font-semibold text-on-surface flex items-center gap-1.5" for="expenseAmount">
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+            টাকার পরিমাণ (Amount) <span class="text-error font-bold">*</span>
+</label>
+<span class="text-label-md font-label-md text-on-surface-variant tracking-wider">BDT ৳</span>
+</div>
+<!-- Huge BDT Currency Input Field -->
+<div class="relative flex items-center rounded-lg border-2 border-primary/30 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/15 transition-all bg-surface-container-lowest overflow-hidden">
+<div class="pl-4 pr-1 text-headline-lg-mobile font-headline-lg-mobile font-bold text-on-surface select-none">৳</div>
+<input class="w-full py-2.5 pr-4 text-headline-lg-mobile font-headline-lg-mobile font-bold text-on-surface border-0 focus:ring-0 focus:outline-none tracking-tight" id="expenseAmount" inputmode="numeric" name="amount" placeholder="০.০০" type="text" value="২,০০০"/>
+<button class="pr-3 text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('expenseAmount').value=''" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Quick Bump Chips -->
+<div class="flex items-center gap-1.5 mt-space-sm overflow-x-auto no-scrollbar pt-0.5">
+<span class="text-label-sm font-label-sm text-on-surface-variant mr-0.5 whitespace-nowrap">দ্রুত যোগ:</span>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container hover:bg-surface-container-high text-primary border border-outline-variant/30 active:scale-95 transition-transform flex-shrink-0" type="button">
+            +৳১০০
+          </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container hover:bg-surface-container-high text-primary border border-outline-variant/30 active:scale-95 transition-transform flex-shrink-0" type="button">
+            +৳৫০০
+          </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container hover:bg-surface-container-high text-primary border border-outline-variant/30 active:scale-95 transition-transform flex-shrink-0" type="button">
+            +৳১,০০০
+          </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container hover:bg-surface-container-high text-primary border border-outline-variant/30 active:scale-95 transition-transform flex-shrink-0" type="button">
+            +৳৫,০০০
+          </button>
+</div>
+</section>
+<!-- 3. Expense Title & Category Selector -->
+<section class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-lg shadow-[0px_1px_3px_rgba(23,35,29,0.04)] space-y-space-md">
+<div>
+<label class="block text-body-md font-title-sm font-semibold text-on-surface mb-1.5" for="expenseTitle">
+            খরচের শিরোনাম (Title) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 px-3 rounded-lg border border-[#E4EAE6] focus:border-primary focus:ring-2 focus:ring-primary/10 text-body-lg font-body-md text-on-surface" id="expenseTitle" placeholder="যেমন: বাসা ভাড়া, বাজার খরচ, ছোট চাচিকে সাহায্য" type="text" value="বাড়িতে টাকা পাঠানো"/>
+<span class="absolute right-3 top-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</span>
+</div>
+</div>
+<!-- Category Horizontal Pills -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-body-sm font-title-sm font-semibold text-on-surface">ক্যাটাগরি নির্বাচন (Category):</span>
+<span class="text-label-sm font-label-sm text-primary">১১টি ক্যাটাগরি</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              বাড়ির খরচ
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              পরিবার সহায়তা
+            </button>
+<!-- Selected State -->
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-primary border border-primary text-on-primary font-semibold shadow-sm active:scale-95 transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">check</span>
+              বাড়িতে পাঠানো
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              বাসা ভাড়া
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              বাজার
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              চিকিৎসা
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              শিক্ষা
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              যাতায়াত
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              কেনাকাটা
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              নিজের খরচ
+            </button>
+<button class="h-8 px-3 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary active:scale-95 transition-all" type="button">
+              অন্যান্য
+            </button>
+</div>
+</div>
+</section>
+<!-- 4. Recipient Details (প্রাপকের তথ্য) -->
+<section class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-lg shadow-[0px_1px_3px_rgba(23,35,29,0.04)] space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">person_pin</span>
+<h2 class="text-body-md font-title-sm font-semibold text-on-surface">প্রাপকের তথ্য (Recipient Tracking)</h2>
+</div>
+<button class="text-label-sm font-label-sm text-primary flex items-center gap-0.5 hover:underline font-semibold" type="button">
+<span class="material-symbols-outlined text-[14px]">contacts</span>
+            ডিরেক্টরি খুঁজুন
+          </button>
+</div>
+<!-- Recipient Name Input with Directory Search Combo -->
+<div class="relative">
+<label class="block text-body-sm font-body-sm text-on-surface-variant mb-1" for="recipientName">কার কাছে টাকা প্রদান করছেন?</label>
+<div class="relative flex items-center">
+<input class="w-full h-12 pl-10 pr-10 rounded-lg border border-[#E4EAE6] focus:border-primary focus:ring-2 focus:ring-primary/10 text-body-lg font-body-md text-on-surface font-semibold" id="recipientName" placeholder="নাম লিখুন বা নির্বাচন করুন" type="text" value="বাড়ি (আম্মা)"/>
+<span class="absolute left-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</span>
+<button class="absolute right-3 text-primary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]">expand_circle_down</span>
+</button>
+</div>
+</div>
+<!-- Relationship Chips -->
+<div>
+<span class="block text-body-sm font-body-sm text-on-surface-variant mb-1.5">সম্পর্ক (Relationship):</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-primary text-on-primary font-semibold shadow-xs flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[12px]">check</span>
+              মা / পিতা
+            </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary" type="button">
+              স্ত্রী / সন্তান
+            </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary" type="button">
+              চাচা / চাচি
+            </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary" type="button">
+              বাড়িওয়ালা
+            </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary" type="button">
+              অন্যান্য আত্মীয়
+            </button>
+<button class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-[#E4EAE6] text-on-surface hover:border-primary" type="button">
+              বন্ধু
+            </button>
+</div>
+</div>
+<!-- Mobile Number (Optional) -->
+<div>
+<label class="block text-body-sm font-body-sm text-on-surface-variant mb-1" for="recipientPhone">মোবাইল নম্বর (ঐচ্ছিক / MFS ক্যাশ আউটের জন্য)</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-on-surface-variant text-label-md font-label-md select-none border-r border-[#E4EAE6] pr-2">+88</span>
+<input class="w-full h-11 pl-16 pr-3 rounded-lg border border-[#E4EAE6] focus:border-primary focus:ring-2 focus:ring-primary/10 text-body-md font-currency-display text-on-surface" id="recipientPhone" placeholder="01XXX-XXXXXX" type="tel" value="01819-724890"/>
+</div>
+</div>
+<!-- Directory Linkage Checkbox Toggle -->
+<label class="flex items-center gap-2.5 pt-1 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-[#BEC9C1]" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface font-medium">এই ব্যক্তিকে পার্সোনাল ডিরেক্টরিতে সংরক্ষণ করুন</span>
+</label>
+</section>
+<!-- 5. Payment Method & Accounting Source (টাকা প্রদানের মাধ্যম) -->
+<section class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-lg shadow-[0px_1px_3px_rgba(23,35,29,0.04)] space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<h2 class="text-body-md font-title-sm font-semibold text-on-surface">টাকা প্রদানের মাধ্যম (Payment Source)</h2>
+</div>
+<span class="text-label-sm font-label-sm text-error font-medium">* আবশ্যক</span>
+</div>
+<!-- MFS & Cash Provider Grid Tiles -->
+<div class="grid grid-cols-3 gap-2">
+<!-- 1: Cash -->
+<div class="p-2.5 rounded-lg border border-[#E4EAE6] bg-[#FFFFFF] hover:border-primary cursor-pointer text-center active:scale-95 transition-all">
+<div class="w-8 h-8 rounded-full bg-surface-container mx-auto mb-1 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div class="text-title-sm font-body-sm font-semibold text-on-surface leading-tight">নগদ ক্যাশ</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Personal Cash</div>
+</div>
+<!-- 2: bKash (Selected) -->
+<div class="p-2.5 rounded-lg border-2 border-primary bg-primary-fixed/20 cursor-pointer text-center relative shadow-xs active:scale-95 transition-all">
+<span class="absolute top-1 right-1 w-4 h-4 bg-primary text-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[11px]">check</span>
+</span>
+<div class="w-8 h-8 rounded-full bg-[#E2136E]/10 mx-auto mb-1 flex items-center justify-center text-[#E2136E] font-bold text-xs">
+              bK
+            </div>
+<div class="text-title-sm font-body-sm font-semibold text-on-surface leading-tight">বিকাশ</div>
+<div class="text-label-sm font-label-sm text-primary font-medium">Personal (01819)</div>
+</div>
+<!-- 3: Nagad -->
+<div class="p-2.5 rounded-lg border border-[#E4EAE6] bg-[#FFFFFF] hover:border-primary cursor-pointer text-center active:scale-95 transition-all">
+<div class="w-8 h-8 rounded-full bg-[#F7941D]/10 mx-auto mb-1 flex items-center justify-center text-[#F7941D] font-bold text-xs">
+              নগদ
+            </div>
+<div class="text-title-sm font-body-sm font-semibold text-on-surface leading-tight">নগদ</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Nagad MFS</div>
+</div>
+<!-- 4: Rocket -->
+<div class="p-2.5 rounded-lg border border-[#E4EAE6] bg-[#FFFFFF] hover:border-primary cursor-pointer text-center active:scale-95 transition-all">
+<div class="w-8 h-8 rounded-full bg-[#8C3494]/10 mx-auto mb-1 flex items-center justify-center text-[#8C3494] font-bold text-xs">
+              রকেট
+            </div>
+<div class="text-title-sm font-body-sm font-semibold text-on-surface leading-tight">রকেট</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">DBBL Rocket</div>
+</div>
+<!-- 5: Bank -->
+<div class="p-2.5 rounded-lg border border-[#E4EAE6] bg-[#FFFFFF] hover:border-primary cursor-pointer text-center active:scale-95 transition-all">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed mx-auto mb-1 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+</div>
+<div class="text-title-sm font-body-sm font-semibold text-on-surface leading-tight">ব্যাংক একাউন্ট</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Islami Bank</div>
+</div>
+<!-- 6: Owner Draw from Shop Cash -->
+<div class="p-2.5 rounded-lg border border-dashed border-tertiary-container bg-tertiary-fixed/30 hover:border-tertiary cursor-pointer text-center active:scale-95 transition-all">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 mx-auto mb-1 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</div>
+<div class="text-title-sm font-body-sm font-semibold text-tertiary leading-tight">দোকানের ক্যাশ</div>
+<div class="text-label-sm font-label-sm text-tertiary font-medium">মালিক উত্তোলন</div>
+</div>
+</div>
+<!-- Special Accounting Rule Micro Note -->
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/40 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">account_tree</span>
+<p class="text-body-sm font-body-sm text-on-surface leading-tight">
+<strong>উত্তোলন নির্দেশিকা:</strong> দোকানের ক্যাশ ড্রয়ার নির্বাচন করলে স্বয়ংক্রিয়ভাবে ব্যবসায়িক মূল খতিয়ানে <em>'মালিক উত্তোলন (Drawings)'</em> হিসেবে গণ্য হবে; এটি মোট ব্যবসায়িক ব্যয়ে প্রতিফলিত হবে না।
+          </p>
+</div>
+</section>
+<!-- 6. Additional Metadata & Media -->
+<section class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-lg shadow-[0px_1px_3px_rgba(23,35,29,0.04)] space-y-space-md">
+<!-- Date Selector -->
+<div class="flex items-center justify-between pb-space-sm border-b border-[#E4EAE6]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<div>
+<span class="text-body-sm font-body-sm text-on-surface-variant block">তারিখ (Transaction Date)</span>
+<span class="text-title-sm font-title-sm text-on-surface font-semibold">১২ মার্চ, ২০২৫ (আজ)</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container text-label-sm font-label-sm font-semibold text-primary hover:bg-surface-container-high" type="button">
+            পরিবর্তন
+          </button>
+</div>
+<!-- Recurring Toggle Switch -->
+<div class="flex items-center justify-between py-1">
+<div class="pr-2">
+<span class="text-body-md font-title-sm font-semibold text-on-surface block">পুনরাবৃত্ত খরচ (Recurring Expense)</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant leading-tight block">প্রতি মাসে নির্দিষ্ট দিনে স্বয়ংক্রিয় যোগ (যেমন বাসা ভাড়া বা সহায়তা)</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Description / Note -->
+<div>
+<label class="block text-body-sm font-body-sm font-semibold text-on-surface mb-1" for="expenseNote">
+            বিবরণ বা নোট (Note)
+          </label>
+<textarea class="w-full p-2.5 rounded-lg border border-[#E4EAE6] focus:border-primary focus:ring-2 focus:ring-primary/10 text-body-md font-body-md text-on-surface" id="expenseNote" placeholder="রমজানের পারিবারিক বাজার ও হাতখরচের জন্য পাঠানো হলো।" rows="2">রমজানের পারিবারিক বাজার ও হাতখরচের জন্য পাঠানো হলো।</textarea>
+</div>
+<!-- Receipt / Slip Upload Box -->
+<div>
+<span class="block text-body-sm font-body-sm font-semibold text-on-surface mb-1.5">
+            মানি রসিদ বা ভাউচার ছবি (Receipt Photo)
+          </span>
+<div class="border-2 border-dashed border-[#BEC9C1] rounded-xl p-4 bg-surface-container-lowest flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">রসিদের ছবি তুলুন অথবা গ্যালারি থেকে যোগ করুন</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-0.5">JPG, PNG বা PDF (সর্বোচ্চ ৫ MB)</p>
+<div class="flex items-center gap-2 mt-3">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold flex items-center gap-1 hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+                ক্যামেরা
+              </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold flex items-center gap-1 hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">image</span>
+                গ্যালারি
+              </button>
+</div>
+</div>
+</div>
+</section>
+</form>
+<!-- 7. Sticky Bottom Action Controls (Fixed with Elevation Level 3) -->
+<footer class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-surface-container-lowest/95 backdrop-blur-md border-t border-[#E4EAE6] p-margin-mobile flex items-center gap-space-sm z-50 shadow-[0px_-4px_16px_rgba(23,35,29,0.08)]">
+<!-- Cancel Button -->
+<button class="w-1/3 h-12 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container active:scale-95 transition-all flex items-center justify-center" type="button">
+        বাতিল
+      </button>
+<!-- Primary Save Button -->
+<button class="w-2/3 h-12 rounded-xl bg-primary text-on-primary font-title-sm text-title-sm font-bold shadow-[0px_8px_20px_rgba(0,81,56,0.28)] hover:bg-[#003d2b] active:scale-98 transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>খরচ সংরক্ষণ করুন</span>
+</button>
+</footer>
+</main>
+<!-- Interactive Demo Script -->
+<script>
+    // Simple micro-interactions for input & bumps
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const text = btn.innerText.trim();
+        const amtInput = document.getElementById('expenseAmount');
+        if (text === '+৳১০০') {
+          amtInput.value = '২,১০০';
+        } else if (text === '+৳৫০০') {
+          amtInput.value = '২,৫০০';
+        } else if (text === '+৳১,০০০') {
+          amtInput.value = '৩,০০০';
+        } else if (text === '+৳৫,০০০') {
+          amtInput.value = '৭,০০০';
+        }
+      });
+    });
+  </script>
+</body></html>

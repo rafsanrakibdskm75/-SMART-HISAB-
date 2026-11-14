@@ -1,0 +1,269 @@
+<!DOCTYPE html><html class="light" lang="bn"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>এমএফএস লেনদেন এন্ট্রি - মেসার্স রহমান ট্রেডার্স</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Inter & Noto Sans Bengali -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006685",
+            "surface-container-low": "#e9f7ed",
+            "on-tertiary-fixed-variant": "#743230",
+            "background": "#effdf3",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d8e6dc",
+            "primary-fixed": "#a4f3cc",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#3c0709",
+            "primary-container": "#176b4d",
+            "on-tertiary-container": "#ffcdca",
+            "primary": "#005138",
+            "tertiary-container": "#924946",
+            "surface-bright": "#effdf3",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#86d0f3",
+            "inverse-surface": "#27332d",
+            "surface-container-high": "#ddece2",
+            "inverse-on-surface": "#e6f4ea",
+            "tertiary-fixed": "#ffdad7",
+            "surface-container-highest": "#d8e6dc",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#005138",
+            "on-secondary-fixed-variant": "#004d65",
+            "secondary-container": "#91dbff",
+            "on-secondary-container": "#00617f",
+            "on-surface-variant": "#3f4943",
+            "inverse-primary": "#89d6b1",
+            "primary-fixed-dim": "#89d6b1",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#176b4d",
+            "on-error-container": "#93000a",
+            "surface-container": "#e3f1e7",
+            "on-surface": "#121e18",
+            "on-error": "#ffffff",
+            "tertiary": "#753230",
+            "surface-dim": "#cfddd4",
+            "tertiary-fixed-dim": "#ffb3af",
+            "on-primary-container": "#9ae9c3",
+            "secondary-fixed": "#bfe9ff",
+            "outline-variant": "#bec9c1",
+            "surface": "#effdf3",
+            "on-background": "#121e18",
+            "on-primary-fixed": "#002114",
+            "outline": "#6f7a73",
+            "on-secondary-fixed": "#001f2a",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "margin": "1rem",
+            "gutter-mobile": "0.75rem",
+            "space-2xl": "2rem",
+            "space-2xs": "0.125rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "margin-mobile": "0.875rem"
+          },
+          "fontFamily": {
+            "currency-display": ["Inter", "sans-serif"],
+            "label-lg": ["Inter", "sans-serif"],
+            "body-sm": ["Noto Sans Bengali", "Noto Sans", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "title-sm": ["Noto Sans Bengali", "Noto Sans", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "body-lg": ["Noto Sans Bengali", "Noto Sans", "sans-serif"],
+            "title-md": ["Noto Sans Bengali", "Noto Sans", "sans-serif"],
+            "body-md": ["Noto Sans Bengali", "Noto Sans", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Material Symbols setup */
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Tactile Elevation shadows */
+    .shadow-level-1 {
+      box-shadow: 0px 1px 3px rgba(23, 35, 29, 0.04), 0px 1px 2px rgba(23, 35, 29, 0.02);
+    }
+    .shadow-level-2 {
+      box-shadow: 0px 4px 12px rgba(23, 35, 29, 0.06), 0px 1px 3px rgba(23, 35, 29, 0.04);
+    }
+    .shadow-level-3 {
+      box-shadow: 0px 8px 24px rgba(23, 107, 77, 0.22), 0px 2px 6px rgba(23, 35, 29, 0.08);
+    }
+
+    /* Custom MFS Brand Accent colors */
+    .border-bkash { border-color: #E2136E; }
+    .bg-bkash-tint { background-color: #FDF1F7; }
+    .text-bkash { color: #E2136E; }
+
+    .border-nagad { border-color: #F7931E; }
+    .bg-nagad-tint { background-color: #FEF7EE; }
+    .text-nagad { color: #D66D00; }
+
+    .border-rocket { border-color: #8C3494; }
+    .bg-rocket-tint { background-color: #FBF2FC; }
+    .text-rocket { color: #8C3494; }
+
+    /* Hide standard scrollbars for horizontal pill tabs */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen flex justify-center">
+<!-- Mobile Device Shell Frame (375px - 420dp width container) -->
+<main class="w-full max-w-[430px] min-h-screen flex flex-col bg-surface pb-[96px] relative shadow-2xl">
+<!-- TopAppBar (Transactional Header with Back Navigation and History) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest flex items-center justify-between px-margin-mobile py-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Go Back" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors active:scale-95 duration-100" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-title-md text-title-md font-bold text-on-surface tracking-tight">এমএফএস লেনদেন এন্ট্রি</h1>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+            মেসার্স রহমান ট্রেডার্স
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Transaction History" class="flex items-center gap-1 px-space-sm py-1.5 rounded-full bg-surface-container text-primary font-label-md text-label-md active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>হিস্ট্রি</span>
+</button>
+</div>
+</header>
+<!-- Main Form Canvas -->
+<div class="px-margin-mobile pt-space-md space-y-space-md flex-1">
+<!-- SECTION 1: Transaction Type Segmented Controller -->
+<section aria-label="Transaction Type Selection" class="space-y-space-xs">
+<label class="block font-title-sm text-title-sm text-on-surface font-semibold">লেনদেনের ধরন (Transaction Type)</label>
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<!-- Active Cash In -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm border border-primary transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">arrow_downward</span>
+<span>ক্যাশ ইন (Cash In)</span>
+</button>
+<!-- Cash Out -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg border border-outline-variant hover:bg-surface-container transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+<span>ক্যাশ আউট</span>
+</button>
+<!-- Send Money -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg border border-outline-variant hover:bg-surface-container transition-all active:scale-95" type="button">
+<span>সেন্ড মানি</span>
+</button>
+<!-- Own Transfer -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg border border-outline-variant hover:bg-surface-container transition-all active:scale-95" type="button">
+<span>ওন ট্রান্সফার</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: MFS Provider & Account Selector -->
+<section aria-label="MFS Provider Selection" class="space-y-space-xs"><div class="flex items-center justify-between mb-1"><label class="font-title-sm text-title-sm text-on-surface font-semibold">এজেন্ট সিম / ওয়ালেট নির্বাচন</label><button type="button" class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline"><span class="material-symbols-outlined text-[14px]">sync</span>ব্যালেন্স রিফ্রেশ</button></div><div class="grid grid-cols-3 gap-2"><div class="relative bg-surface-container-lowest border-2 border-primary rounded-xl p-space-sm flex flex-col justify-between shadow-sm cursor-pointer"><div class="flex items-center justify-between mb-1"><span class="font-title-sm text-title-sm font-bold text-bkash">bKash</span><span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span></div><div class="font-label-sm text-label-sm text-on-surface-variant font-medium">০১৮১২-***৪৫৬</div><div class="mt-2 pt-1.5 border-t border-outline-variant/30 flex flex-col"><span class="text-[10px] text-on-surface-variant">ব্যালেন্স</span><span class="font-currency-display text-[14px] font-bold text-on-surface">৳৪২,৩০০</span></div></div><div class="bg-surface-container-lowest border border-outline-variant/60 hover:border-outline rounded-xl p-space-sm flex flex-col justify-between shadow-sm cursor-pointer"><div class="flex items-center justify-between mb-1"><span class="font-title-sm text-title-sm font-bold text-nagad">Nagad</span><span class="w-3.5 h-3.5 rounded-full border border-outline-variant"></span></div><div class="font-label-sm text-label-sm text-on-surface-variant font-medium">০১৭৫০-***৯১০</div><div class="mt-2 pt-1.5 border-t border-outline-variant/30 flex flex-col"><span class="text-[10px] text-on-surface-variant">ব্যালেন্স</span><span class="font-currency-display text-[14px] font-bold text-on-surface">৳২৩,৫০০</span></div></div><div class="bg-surface-container-lowest border border-outline-variant/60 hover:border-outline rounded-xl p-space-sm flex flex-col justify-between shadow-sm cursor-pointer"><div class="flex items-center justify-between mb-1"><span class="font-title-sm text-title-sm font-bold text-rocket">Rocket</span><span class="w-3.5 h-3.5 rounded-full border border-outline-variant"></span></div><div class="font-label-sm text-label-sm text-on-surface-variant font-medium">০১৬১২-***৮৮৮</div><div class="mt-2 pt-1.5 border-t border-outline-variant/30 flex flex-col"><span class="text-[10px] text-on-surface-variant">ব্যালেন্স</span><span class="font-currency-display text-[14px] font-bold text-on-surface">৳১২,৪০০</span></div></div></div><div class="bg-surface-container-low rounded-lg px-space-md py-2 flex items-center justify-between text-label-sm mt-1"><div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">verified_user</span><span>দৈনিক ক্যাশ-ইন লিমিট অবশিষ্ট:</span></div><span class="font-bold text-primary font-currency-display">৳২,০৭,৭০০ / ২,৫০,০০০</span></div></section>
+<!-- SECTION 3: Customer Information & Mobile Number -->
+<section aria-label="Customer Information" class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-space-md shadow-level-1 space-y-space-sm"><div class="flex items-center justify-between"><label class="font-title-sm text-title-sm text-on-surface font-semibold flex items-center gap-1" for="cust-mobile"><span>গ্রাহকের মোবাইল নম্বর</span><span class="text-error text-xs">*</span></label><button type="button" class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline"><span class="material-symbols-outlined text-[15px]">content_paste</span>পেস্ট করুন</button></div><div class="relative flex items-center"><div class="absolute left-3 flex items-center pointer-events-none text-on-surface-variant"><span class="font-label-lg text-label-lg font-semibold border-r border-outline-variant pr-2 text-on-surface">+৮৮০</span></div><input class="w-full bg-surface-container-lowest text-on-surface pl-20 pr-10 py-2.5 rounded-lg border border-outline-variant/60 focus:border-primary focus:ring-1 focus:ring-primary font-currency-display font-semibold text-body-lg tracking-wider outline-none transition-all" id="cust-mobile" placeholder="01XXXXXXXXX" type="tel" value="০১৭৩৪-৫৬৭৮৯০"><button aria-label="Phonebook Contact Picker" class="absolute right-2.5 text-primary hover:bg-surface-container p-1 rounded-full active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[22px]">contacts</span></button></div><div class="bg-surface-container-low flex items-center justify-between p-2.5 rounded-lg"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-title-sm">র</div><div><div class="font-title-sm text-title-sm text-on-surface font-semibold leading-tight">মো: রফিকুল ইসলাম</div><div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>নিয়মিত খরিদ্দার (বাকি খাতা লিংকড)</div></div></div><div class="text-right"><span class="text-[10px] text-on-surface-variant block">পূর্বের বাকি</span><span class="font-currency-display text-label-md font-bold text-tertiary">৳৪৫০</span></div></div></section>
+<!-- SECTION 4: Transaction Amount & Commission Calculator -->
+<section aria-label="Transaction Amount &amp; Commission Calculation" class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-space-md shadow-level-1 space-y-space-md"><div><div class="flex items-center justify-between mb-1.5"><label class="font-title-sm text-title-sm text-on-surface font-semibold" for="trx-amount">লেনদেনের পরিমাণ (BDT Amount)</label><span class="font-label-sm text-label-sm text-on-surface-variant">সর্বোচ্চ: ৳২৫,০০০</span></div><div class="relative flex items-center bg-surface-container-low rounded-xl border border-primary/40 px-3.5 py-2 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/15 transition-all"><span class="font-currency-display text-2xl font-bold text-primary mr-1.5">৳</span><input class="w-full bg-transparent border-0 p-0 text-on-surface font-currency-display font-bold text-headline-lg-mobile focus:ring-0 focus:outline-none tracking-tight" id="trx-amount" type="text" value="৫,০০০"><button class="text-on-surface-variant hover:text-on-surface px-1.5 py-0.5 text-label-sm font-semibold rounded hover:bg-surface-container" type="button">ক্লিয়ার</button></div><div class="grid grid-cols-4 gap-1.5 mt-2"><button class="py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-label-md font-semibold text-on-surface hover:bg-surface-container transition-colors text-center" type="button">+৳১,০০০</button><button class="py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-label-md font-semibold text-on-surface hover:bg-surface-container transition-colors text-center" type="button">+৳২,০০০</button><button class="py-1.5 rounded-lg bg-primary/10 border border-primary text-label-md font-bold text-primary transition-colors text-center" type="button">+৳৫,০০০</button><button class="py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-label-md font-semibold text-on-surface hover:bg-surface-container transition-colors text-center" type="button">+৳১০,০০০</button></div></div><div class="bg-surface-container-low rounded-xl p-space-sm space-y-1.5"><div class="flex items-center justify-between text-label-sm text-on-surface-variant font-medium"><span>ক্যাশ গ্রহণ:</span><span class="font-currency-display font-bold text-on-surface">৳৫,০০০.০০</span></div><div class="flex items-center justify-between text-label-sm text-on-surface-variant font-medium"><span>কমিশন প্রাপ্তি (০.৪১%):</span><span class="font-currency-display font-bold text-primary">+৳২০.৫০</span></div><div class="pt-1.5 border-t border-outline-variant/40 flex items-center justify-between font-title-sm"><span class="font-bold text-on-surface">নিট দোকান প্রফিট (Net Store Profit):</span><span class="font-currency-display font-bold text-primary text-headline-sm">+৳২০.৫০</span></div></div></section>
+<!-- SECTION 5: Transaction ID (TrxID) & Reference -->
+<section aria-label="Transaction ID &amp; Remarks" class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-space-md shadow-level-1 space-y-space-sm"><div><div class="flex items-center justify-between mb-1"><label class="font-title-sm text-title-sm text-on-surface font-semibold" for="trx-id">TrxID / ট্রানজেকশন রেফারেন্স</label><button type="button" class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline"><span class="material-symbols-outlined text-[14px]">sms</span>এসএমএস অটো-রিড</button></div><div class="relative flex items-center"><input class="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg border border-outline-variant/60 focus:border-primary focus:ring-1 focus:ring-primary font-currency-display uppercase font-semibold text-body-md tracking-wider outline-none" id="trx-id" placeholder="যেমন: BK9X2810" type="text" value="BK9X28109A"><button aria-label="Scan QR Code" class="absolute right-2 text-on-surface-variant hover:text-primary p-1 active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">qr_code_scanner</span></button></div></div><div><label class="block font-title-sm text-title-sm text-on-surface font-semibold mb-1" for="trx-remarks">নোট / ক্যাশ ড্রয়ার নির্বাচন</label><div class="relative"><input class="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg border border-outline-variant/60 focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none" id="trx-remarks" type="text" value="দোকানের ক্যাশ ড্রয়ার ১"><span class="absolute right-3 top-2.5 text-on-surface-variant pointer-events-none material-symbols-outlined text-[18px]">edit_note</span></div></div></section>
+<!-- SECTION 6: Security & Financial Ledger Warning -->
+<section aria-label="Ledger Impact Disclaimer" class="bg-surface-container border-primary rounded-r-xl p-space-sm flex items-start gap-2.5 rounded-xl"><span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5" style="font-variation-settings: &quot;FILL&quot; 1;">info</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">অ্যাকাউন্টিং সমন্বয়: bKash থেকে <strong class="text-tertiary font-semibold">৳৫,০০০</strong> হ্রাস পাবে এবং ক্যাশ ড্রয়ারে <strong class="text-primary font-semibold">৳৫,০২০.৫০</strong> জমা হবে।</p></section>
+</div>
+<!-- SECTION 7: Bottom Sticky Action Confirmation Bar -->
+<div class="fixed bottom-0 max-w-[430px] w-full bg-surface-container-lowest border-t border-outline-variant/60 p-space-md shadow-level-3 z-50">
+<div class="flex items-center justify-between mb-2 px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">মোট ক্যাশ সংগ্রহ:</span>
+<span class="font-currency-display text-title-md font-bold text-primary">৳৫,০০০.০০</span>
+</div>
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary py-3.5 px-4 rounded-xl font-title-sm text-title-sm font-bold flex items-center justify-center gap-2 shadow-level-2 active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>লেনদেন নিশ্চিত করুন ও সেভ করুন</span>
+</button>
+</div>
+</main>
+<!-- Interactive Mock Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle logic for quick amount addition pills
+      const amountInput = document.getElementById('trx-amount');
+      const amountPills = document.querySelectorAll('button[type="button"]');
+
+      amountPills.forEach(pill => {
+        if (pill.textContent.includes('+৳')) {
+          pill.addEventListener('click', () => {
+            const addedVal = parseInt(pill.textContent.replace(/[^0-9]/g, ''), 10);
+            if (!isNaN(addedVal)) {
+              let currentVal = parseInt(amountInput.value.replace(/[^0-9]/g, ''), 10) || 0;
+              currentVal += addedVal;
+              amountInput.value = currentVal.toLocaleString('en-US');
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+
+</body></html>

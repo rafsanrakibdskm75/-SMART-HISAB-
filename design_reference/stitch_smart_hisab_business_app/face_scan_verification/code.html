@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>স্মার্ট ফেস আইডি ভেরিফিকেশন - স্মার্ট হিসাব</title>
+<!-- Material Symbols Outlined Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts for Inter & Noto Sans Bengali -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration matching the Design System Tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#743230",
+            "secondary-container": "#91dbff",
+            "secondary-fixed": "#bfe9ff",
+            "inverse-on-surface": "#e6f4ea",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-bright": "#effdf3",
+            "on-primary": "#ffffff",
+            "surface-dim": "#cfddd4",
+            "on-tertiary-fixed": "#3c0709",
+            "secondary-fixed-dim": "#86d0f3",
+            "secondary": "#006685",
+            "on-secondary-fixed": "#001f2a",
+            "tertiary-fixed-dim": "#ffb3af",
+            "inverse-primary": "#89d6b1",
+            "on-surface-variant": "#3f4943",
+            "inverse-surface": "#27332d",
+            "outline-variant": "#bec9c1",
+            "error": "#ba1a1a",
+            "primary": "#005138",
+            "on-background": "#121e18",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#ffdad7",
+            "on-error": "#ffffff",
+            "outline": "#6f7a73",
+            "surface-tint": "#176b4d",
+            "primary-fixed": "#a4f3cc",
+            "on-secondary-fixed-variant": "#004d65",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#00617f",
+            "on-tertiary-container": "#ffcdca",
+            "surface-container-low": "#e9f7ed",
+            "surface-variant": "#d8e6dc",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#002114",
+            "on-primary-fixed-variant": "#005138",
+            "primary-container": "#176b4d",
+            "surface-container-highest": "#d8e6dc",
+            "tertiary": "#753230",
+            "tertiary-container": "#924946",
+            "on-surface": "#121e18",
+            "primary-fixed-dim": "#89d6b1",
+            "surface-container": "#e3f1e7",
+            "on-primary-container": "#9ae9c3",
+            "surface": "#effdf3",
+            "background": "#effdf3",
+            "surface-container-high": "#ddece2"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "margin-mobile": "0.875rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-2xl": "2rem",
+            "space-2xs": "0.125rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Noto Sans"],
+            "headline-sm": ["Inter"],
+            "title-sm": ["Noto Sans"],
+            "headline-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-md": ["Noto Sans"],
+            "currency-display": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "title-md": ["Noto Sans"],
+            "body-lg": ["Noto Sans"],
+            "headline-lg-mobile": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    /* Subtle radar scanning animation */
+    @keyframes hudScan {
+      0% { transform: translateY(-4px); opacity: 0.8; }
+      50% { transform: translateY(180px); opacity: 0.3; }
+      100% { transform: translateY(-4px); opacity: 0.8; }
+    }
+    .scanner-line {
+      animation: hudScan 2.4s ease-in-out infinite;
+    }
+
+    /* Pulse for live AI match ring */
+    @keyframes targetPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.03); opacity: 0.5; }
+    }
+    .pulse-ring {
+      animation: targetPulse 2s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (Android 390px spec) -->
+<main class="w-full max-w-[390px] min-h-screen bg-background relative flex flex-col shadow-2xl overflow-x-hidden border-x border-outline-variant/30">
+<!-- Top Status/Brand Bar (Shared Component Anchor - TopAppBar execution) -->
+<header class="bg-surface-container-lowest text-primary flex justify-between items-center w-full px-margin-mobile py-space-sm border-b border-outline-variant shadow-sm z-30 sticky top-0">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Back" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-title-md font-title-md font-semibold text-on-surface leading-tight tracking-tight">মেসার্স রহমান ট্রেডার্স</h1>
+<p class="text-label-sm font-label-sm text-primary tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container inline-block animate-ping"></span>
+            লাইভ গ্রাহক পরিচিতি HUD
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all" id="flashToggle" title="টর্চ অন/অফ">
+<span class="material-symbols-outlined text-[20px]">flash_on</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all" title="সুরক্ষা তথ্য">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</button>
+</div>
+</header>
+<!-- Sub-header Verification Status Banner -->
+<section class="px-margin-mobile pt-space-sm pb-space-xs flex justify-between items-center bg-surface-container-low/60 border-b border-outline-variant/40">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-label-lg font-label-lg text-primary font-bold">স্মার্ট ফেস আইডি ভেরিফিকেশন</span>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20">
+        AI CAMERA V2.4
+      </span>
+</section>
+<!-- Canvas Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto px-margin-mobile pt-space-sm pb-[108px] space-y-space-md">
+<!-- SECTION 2: Camera Viewfinder Frame / Biometric HUD Area -->
+<section class="relative bg-inverse-surface rounded-xl p-space-sm overflow-hidden border border-outline/30 shadow-[0px_4px_12px_rgba(23,35,29,0.08)]">
+<!-- Background Grid Micro-pattern for Optical Sense -->
+<div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#89d6b1_1px,transparent_1px)] [background-size:12px_12px]"></div>
+<!-- Biometric Scanner Viewport Container -->
+<div class="relative w-full h-[220px] rounded-lg overflow-hidden flex items-center justify-center bg-black/60">
+<!-- Realistic Customer Facial Capture Photo -->
+<img class="w-full h-full object-cover object-center filter contrast-105" data-alt="A dignified senior Bangladeshi merchant and loyal customer in his early sixties with gentle smiling eyes and a neat white beard, wearing traditional white cotton kurta, in a well-lit Dhaka trading stall with soft natural rim lighting and subtle emerald HUD holographic contours around his face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyO2COlBNX-V-FE8BHM_DGaEKFwxBmOpqjvvSKYuIw1eOzRh3u8VhjXvJkf1j9Eb1s-yUlBVOz63KCh3mKfG-BFhR3iWt-C-5mmecizewKZ6-YTtw5oHWA3mBp8jh30XNJ9GfRhMSZRHM2QMAwhEDIklQhI95P3Kmfl7UyF-ZGLZya9cujLniBe0rWhvsKyAy216JOpV9vsi4T46Oenk80JMnRloJ77XWJABiVrL4"/>
+<!-- High-Tech Scanning Reticle Overlay -->
+<div class="absolute inset-4 pointer-events-none rounded-lg flex flex-col justify-between">
+<!-- Top HUD Reticles -->
+<div class="flex justify-between items-start">
+<div class="w-6 h-6 border-t-2 border-l-2 border-primary-fixed rounded-tl-sm shadow-[0_0_8px_#a4f3cc]"></div>
+<div class="px-2 py-0.5 rounded bg-black/70 backdrop-blur-sm border border-primary-fixed/40 text-[9px] font-label-sm text-primary-fixed uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span>
+                FACE BOUND [184, 92, 340, 290]
+              </div>
+<div class="w-6 h-6 border-t-2 border-r-2 border-primary-fixed rounded-tr-sm shadow-[0_0_8px_#a4f3cc]"></div>
+</div>
+<!-- Optical Center Crosshairs & Circular Face Target -->
+<div class="self-center relative flex items-center justify-center">
+<div class="w-36 h-36 rounded-full border border-dashed border-primary-fixed/60 pulse-ring flex items-center justify-center">
+<div class="w-28 h-28 rounded-full border border-primary-fixed/40"></div>
+</div>
+<div class="absolute w-40 h-[1px] bg-primary-fixed/30"></div>
+<div class="absolute h-40 w-[1px] bg-primary-fixed/30"></div>
+</div>
+<!-- Scanning Line -->
+<div class="absolute left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-primary-fixed to-transparent scanner-line shadow-[0_0_10px_#a4f3cc]"></div>
+<!-- Bottom HUD Reticles -->
+<div class="flex justify-between items-end">
+<div class="w-6 h-6 border-b-2 border-l-2 border-primary-fixed rounded-bl-sm shadow-[0_0_8px_#a4f3cc]"></div>
+<div class="px-2 py-0.5 rounded bg-black/70 backdrop-blur-sm border border-primary-fixed/30 text-[9px] font-mono text-inverse-primary">
+                FPS: 60 • DIST: 45cm
+              </div>
+<div class="w-6 h-6 border-b-2 border-r-2 border-primary-fixed rounded-br-sm shadow-[0_0_8px_#a4f3cc]"></div>
+</div>
+</div>
+<!-- Top-Center Match Status Badge -->
+<div class="absolute top-2 left-2 right-2 flex justify-center z-10">
+<div class="bg-surface-container-lowest/95 backdrop-blur-md px-3 py-1 rounded-full shadow-lg border border-primary/30 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-sm font-label-sm text-primary font-bold tracking-tight">গ্রাহক সফলভাবে সনাক্ত (Match 99.4%)</span>
+<span class="bg-primary text-on-primary text-[9px] font-label-sm px-1.5 py-0.2 rounded-full">ভেরিফাইড</span>
+</div>
+</div>
+<!-- Bottom Telemetry HUD Line -->
+<div class="absolute bottom-2 left-2 right-2 flex justify-between items-center px-2 py-1 rounded bg-inverse-surface/85 backdrop-blur-sm border border-outline/40">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span class="text-[10px] font-label-sm text-inverse-on-surface">লাইভ বায়োমেট্রিক সক্রিয়</span>
+</div>
+<span class="text-[10px] font-mono text-outline-variant">হ্যাশ: 8F92-BC14</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Verified Person Unified Profile Card (United Person Management) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-[0px_1px_3px_rgba(23,35,29,0.04)] relative">
+<div class="flex items-start gap-space-md">
+<!-- Real Profile Avatar with Verification Seal -->
+<div class="relative shrink-0">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-primary-container p-0.5 bg-surface-container-low shadow-sm">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close up profile portrait of Haji Abul Kashem, a respectable Bangladeshi senior merchant with a kind expression and white beard, wearing crisp traditional apparel in a clean, brightly illuminated modern financial firm setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTFLVkaCf9k9_Feh5qRxqb2VKf299przlOuPtojvsdVH7QX5-LOQTO2dvUPEhIzqED9OMwDCx6rSy_idd0tem_eVKYt20dwLW0NU1ZYyb6SG0wHHYc7DtrFYIvMm6Pf8fyvzrTVspHq22nv_Dp5I7Z2CHXEZZoJZ2LZUPEB_i_zyPiA75BYZNKYK8qFIuEuP2tetNYtRIvC8bZG_TNbn3PN1pbztB3HeMlLXezx5w"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full w-5 h-5 flex items-center justify-center border-2 border-white shadow">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Identity Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="text-title-md font-title-md font-bold text-on-surface truncate">হাজী আবুল কাশেম</h2>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container text-primary font-semibold">আইডি: #HK-৭৮০</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant font-medium">Haji Abul Kashem • বিশ্বস্ত খরিদ্দার</p>
+<div class="mt-1 flex items-center gap-1 text-body-sm font-body-sm text-outline truncate">
+<span class="material-symbols-outlined text-[14px]">call</span>
+<span class="font-mono text-on-surface font-medium">০১৭১২-৩৪৫৬৭৮</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span class="truncate">ধানমন্ডি পাইকারি গলি</span>
+</div>
+</div>
+</div>
+<!-- Roles Badge Row -->
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/40 flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-label-sm font-semibold flex items-center gap-1 border border-primary/20">
+<span class="material-symbols-outlined text-[12px]">storefront</span> খরিদ্দার (Customer)
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/60 text-error text-[10px] font-label-sm font-semibold flex items-center gap-1 border border-error/20">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> বাকি খাতা (Ledger)
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary text-[10px] font-label-sm font-semibold flex items-center gap-1 border border-secondary/20">
+<span class="material-symbols-outlined text-[12px]">shopping_basket</span> টোকরি ভাড়া (Rental)
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-label-sm font-semibold flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[12px]">groups</span> সমিতি সদস্য (Somity)
+          </span>
+</div>
+</section>
+<!-- SECTION 4: Multi-Ledger Outstanding & Financial Status Overview -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between px-0.5">
+<span class="text-title-sm font-title-sm text-on-surface font-bold">আর্থিক স্থিতি ও সক্রিয় হিসাব (Financial Overview)</span>
+<span class="text-label-sm font-label-sm text-primary font-semibold flex items-center gap-0.5">
+            হালনাগাদ <span class="material-symbols-outlined text-[14px]">sync</span>
+</span>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<!-- Card 1: Baki Due Card -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg border border-outline-variant/60 shadow-[0px_1px_2px_rgba(23,35,29,0.03)] flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-error-container/50 text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_late</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-bold">বাকি পাওনা (Baki Due)</span>
+<span class="text-[10px] font-label-sm px-1.5 py-0.2 bg-error/10 text-error font-bold rounded">আদায়যোগ্য</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">গত লেনদেন: গতকাল (বিকাল ৫:২০)</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-headline-sm font-headline-sm text-error font-bold tracking-tight">৳১২,৪০০</span>
+<p class="text-[10px] font-label-sm text-outline-variant font-medium">লিমিট: ৳২০,০০০</p>
+</div>
+</div>
+<!-- Card 2: Tokri Rental Card -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg border border-outline-variant/60 shadow-[0px_1px_2px_rgba(23,35,29,0.03)] flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-bold">টোকরি ভাড়া (Rental)</span>
+<span class="text-[10px] font-label-sm px-1.5 py-0.2 bg-secondary/10 text-secondary font-bold rounded">২টি সক্রিয়</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">টোকরি নং: #১২ ও #১৩ (গত ৩ দিন)</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold tracking-tight">৳২৪০</span>
+<p class="text-[10px] font-label-sm text-outline-variant font-medium">প্রতিদিন ৳৪০/টি</p>
+</div>
+</div>
+<!-- Card 3: Somity Vault Savings -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg border border-outline-variant/60 shadow-[0px_1px_2px_rgba(23,35,29,0.03)] flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/50 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">savings</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-bold">সমিতি সঞ্চয় (Somity)</span>
+<span class="text-[10px] font-label-sm px-1.5 py-0.2 bg-primary/10 text-primary font-bold rounded">#SM-০০২</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">মাসিক কিস্তি পরিশোধিত • গোল্ড প্ল্যান</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-headline-sm font-headline-sm text-primary font-bold tracking-tight">৳৪৫,০০০</span>
+<p class="text-[10px] font-label-sm text-primary/80 font-medium">মোট জমাকৃত</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Direct One-Tap Instant Financial Actions -->
+<section class="space-y-space-xs pt-1">
+<div class="flex items-center justify-between px-0.5">
+<span class="text-title-sm font-title-sm text-on-surface font-bold">তাৎক্ষণিক লেনদেন করুন (Instant Actions)</span>
+<span class="text-label-sm font-label-sm text-outline">এক ট্যাপে কাজ</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- CTA 1: Collect Due / Cash In (Emerald Primary) -->
+<button class="bg-primary hover:bg-primary-container text-on-primary p-space-sm rounded-lg flex items-center gap-space-sm active:scale-95 transition-all shadow-[0px_2px_6px_rgba(23,107,77,0.25)] text-left group">
+<div class="w-9 h-9 rounded-md bg-white/15 flex items-center justify-center shrink-0 text-white">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold leading-tight">টাকা জমা নিন</p>
+<p class="text-[11px] font-body-sm text-primary-fixed opacity-90">Collect Due Cash</p>
+</div>
+</button>
+<!-- CTA 2: Give Baki Credit (Light Red Alert) -->
+<button class="bg-surface-container-lowest hover:bg-error-container/20 text-error border border-error/30 p-space-sm rounded-lg flex items-center gap-space-sm active:scale-95 transition-all shadow-sm text-left">
+<div class="w-9 h-9 rounded-md bg-error/10 flex items-center justify-center shrink-0 text-error">
+<span class="material-symbols-outlined text-[22px]">post_add</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold leading-tight">নতুন বাকি দিন</p>
+<p class="text-[11px] font-body-sm text-on-surface-variant">Issue Baki Credit</p>
+</div>
+</button>
+<!-- CTA 3: Mobile Recharge / MFS Shortcut -->
+<button class="bg-surface-container-lowest hover:bg-surface-container-high border border-outline-variant/60 p-space-sm rounded-lg flex items-center gap-space-sm active:scale-95 transition-all shadow-sm text-left">
+<div class="w-9 h-9 rounded-md bg-secondary-container/40 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[22px]">phonelink_ring</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold leading-tight text-on-surface">রিচার্জ করুন</p>
+<p class="text-[11px] font-body-sm text-outline">GP / Robi / Banglalink</p>
+</div>
+</button>
+<!-- CTA 4: Tokri Rental Management -->
+<button class="bg-surface-container-lowest hover:bg-surface-container-high border border-outline-variant/60 p-space-sm rounded-lg flex items-center gap-space-sm active:scale-95 transition-all shadow-sm text-left">
+<div class="w-9 h-9 rounded-md bg-surface-container flex items-center justify-center shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">swap_horiz</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold leading-tight text-on-surface">টোকরি ফেরত/ভাড়া</p>
+<p class="text-[11px] font-body-sm text-outline">Basket Logistics</p>
+</div>
+</button>
+</div>
+</section>
+<!-- SECTION 6: Security & Privacy Compliance Disclaimer -->
+<section class="bg-surface-container-low rounded-lg p-space-sm border border-outline-variant/50 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">lock</span>
+<div class="space-y-0.5">
+<p class="text-label-md font-label-md text-on-surface font-semibold">বায়োমেট্রিক নিরাপত্তা ও গোপনীয়তা নীতি</p>
+<p class="text-[11px] font-body-sm text-on-surface-variant leading-relaxed">
+            গ্রাহকের সম্মতিতে সংগৃহীত ফেস ডেটা এনক্রিপ্ট রাখা হয়। সরাসরি কোনো স্বয়ংক্রিয় টাকা কর্তন হয় না। প্রতিটি লেনদেনে আপনার চূড়ান্ত অনুমোদন প্রয়োজন।
+          </p>
+</div>
+</section>
+<!-- SECTION 7: Bottom Secondary Utility Actions -->
+<section class="flex gap-2 pt-1">
+<button class="flex-1 bg-surface-container-lowest hover:bg-surface-container border border-outline-variant text-on-surface py-2.5 px-3 rounded-full text-label-lg font-label-lg flex items-center justify-center gap-1.5 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+          পুনরায় স্ক্যান করুন
+        </button>
+<button class="flex-1 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/80 text-primary py-2.5 px-3 rounded-full text-label-lg font-label-lg font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">account_box</span>
+          পূর্ণ খতিয়ান দেখুন
+        </button>
+</section>
+</div>
+<!-- Bottom Navigation Bar (Shared Component: BottomNavBar Execution) -->
+<!-- Matches JSON specification: 5 destinations, with "গ্রাহক" (Customers) active for verified person management context -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[390px] mx-auto z-50 flex justify-around items-center px-space-xs py-space-xs h-16 bg-surface-container-lowest border-t border-outline-variant shadow-[0_-2px_6px_rgba(23,35,29,0.06)]">
+<!-- Destination 1: হোম (Home) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">হোম</span>
+</a>
+<!-- Destination 2: হিসাব (Accounts/Ledger) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-0.5">হিসাব</span>
+</a>
+<!-- Destination 3: গ্রাহক (Customers) - ACTIVE DESTINATION -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary bg-surface-container rounded-full px-space-md py-space-xs font-semibold hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">গ্রাহক</span>
+</a>
+<!-- Destination 4: রিপোর্ট (Reports) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">রিপোর্ট</span>
+</a>
+<!-- Destination 5: মেনু (Menu) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">menu</span>
+<span class="text-label-sm font-label-sm mt-0.5">মেনু</span>
+</a>
+</nav>
+</main>
+<!-- Interactive HUD Micro-Interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const flashBtn = document.getElementById('flashToggle');
+      let flashActive = false;
+
+      if (flashBtn) {
+        flashBtn.addEventListener('click', () => {
+          flashActive = !flashActive;
+          const icon = flashBtn.querySelector('.material-symbols-outlined');
+          if (flashActive) {
+            flashBtn.classList.add('bg-primary-fixed', 'text-primary');
+            icon.textContent = 'flash_on';
+            icon.style.fontVariationSettings = "'FILL' 1";
+          } else {
+            flashBtn.classList.remove('bg-primary-fixed', 'text-primary');
+            icon.textContent = 'flash_off';
+            icon.style.fontVariationSettings = "'FILL' 0";
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

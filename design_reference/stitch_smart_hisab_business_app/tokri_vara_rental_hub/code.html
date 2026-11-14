@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>টোকরি ভাড়া ও ইনভেন্টরি ড্যাশবোর্ড - Smart Hisab</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006685",
+            "surface-container-low": "#e9f7ed",
+            "on-tertiary-fixed-variant": "#743230",
+            "background": "#effdf3",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d8e6dc",
+            "primary-fixed": "#a4f3cc",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#3c0709",
+            "primary-container": "#176b4d",
+            "on-tertiary-container": "#ffcdca",
+            "primary": "#005138",
+            "tertiary-container": "#924946",
+            "surface-bright": "#effdf3",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#86d0f3",
+            "inverse-surface": "#27332d",
+            "surface-container-high": "#ddece2",
+            "inverse-on-surface": "#e6f4ea",
+            "tertiary-fixed": "#ffdad7",
+            "surface-container-highest": "#d8e6dc",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#005138",
+            "on-secondary-fixed-variant": "#004d65",
+            "secondary-container": "#91dbff",
+            "on-secondary-container": "#00617f",
+            "on-surface-variant": "#3f4943",
+            "inverse-primary": "#89d6b1",
+            "primary-fixed-dim": "#89d6b1",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#176b4d",
+            "on-error-container": "#93000a",
+            "surface-container": "#e3f1e7",
+            "on-surface": "#121e18",
+            "on-error": "#ffffff",
+            "tertiary": "#753230",
+            "surface-dim": "#cfddd4",
+            "tertiary-fixed-dim": "#ffb3af",
+            "on-primary-container": "#9ae9c3",
+            "secondary-fixed": "#bfe9ff",
+            "outline-variant": "#bec9c1",
+            "surface": "#effdf3",
+            "on-background": "#121e18",
+            "on-primary-fixed": "#002114",
+            "outline": "#6f7a73",
+            "on-secondary-fixed": "#001f2a",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "margin": "1rem",
+            "gutter-mobile": "0.75rem",
+            "space-2xl": "2rem",
+            "space-2xs": "0.125rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "margin-mobile": "0.875rem"
+          },
+          "fontFamily": {
+            "currency-display": ["Inter", "sans-serif"],
+            "label-lg": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-sm": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "label-sm": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "title-sm": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "headline-sm": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-lg": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-md": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-lg": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "title-md": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "body-md": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "label-md": ["Inter", "Noto Sans Bengali", "sans-serif"]
+          },
+          "fontSize": {
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    body {
+      background-color: #F6F8F7;
+      color: #121e18;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Elevation Tokens */
+    .elevation-level-1 {
+      box-shadow: 0px 1px 3px rgba(23, 35, 29, 0.04), 0px 1px 2px rgba(23, 35, 29, 0.02);
+    }
+    .elevation-level-2 {
+      box-shadow: 0px 4px 12px rgba(23, 35, 29, 0.06), 0px 1px 3px rgba(23, 35, 29, 0.04);
+    }
+    .elevation-level-3 {
+      box-shadow: 0px 8px 24px rgba(23, 107, 77, 0.22), 0px 2px 6px rgba(23, 35, 29, 0.08);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F6F8F7] font-body-md antialiased min-h-screen pb-[104px]">
+<!-- Mobile Viewport Container (Centered for desktop, native mobile responsive) -->
+<div class="max-w-[430px] mx-auto min-h-screen relative flex flex-col bg-[#F6F8F7]">
+<!-- TopAppBar (Based on Shared Components JSON) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest flex justify-between items-center w-full px-margin-mobile py-space-sm shadow-sm">
+<div class="flex items-center space-x-2">
+<button aria-label="Back" class="p-space-xs rounded-full text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-100 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-title-md font-title-md font-semibold text-on-surface leading-tight">টোকরি ভাড়া ব্যবস্থাপনা</h1>
+<span class="text-label-sm font-label-sm text-outline font-medium">কারওয়ান বাজার আড়ত • Tokri Hub</span>
+</div>
+</div>
+<!-- Trailing Action Icons -->
+<div class="flex items-center space-x-1">
+<button aria-label="Filter Inventory" class="p-space-xs rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</button>
+<button aria-label="Settings" class="p-space-xs rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pt-space-md space-y-space-md">
+<!-- SECTION 1: Tokri Inventory & Rental KPI Bento Grid -->
+<section aria-label="Inventory Metrics">
+<div class="grid grid-cols-2 gap-gutter-mobile mb-space-sm">
+<!-- Card 1: Total Stock -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-[#E4EAE6] elevation-level-1 relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">মোট টোকরি</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">inventory_2</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">১২০</span>
+<span class="text-body-sm font-body-sm text-outline">টি</span>
+</div>
+<div class="mt-space-xs flex items-center text-label-sm font-label-sm text-outline">
+<span>ইনভেন্টরি ধারণক্ষমতা</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-secondary/20">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+</div>
+<!-- Card 2: Currently Rented -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-[#E4EAE6] elevation-level-1 relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">মাঠে / ভাড়ায়</span>
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-headline-md font-headline-md text-primary font-bold tracking-tight">৪২</span>
+<span class="text-body-sm font-body-sm text-primary/80">টি</span>
+</div>
+<div class="mt-space-xs flex items-center text-label-sm font-label-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[12px] mr-0.5">trending_up</span>
+<span>৩৫% মাঠে সক্রিয়</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary/20">
+<div class="h-full bg-primary w-[35%]"></div>
+</div>
+</div>
+<!-- Card 3: In-Store Available -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-[#E4EAE6] elevation-level-1 relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">দোকানে মজুদ</span>
+<span class="material-symbols-outlined text-outline text-[20px]">warehouse</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">৭৮</span>
+<span class="text-body-sm font-body-sm text-outline">টি</span>
+</div>
+<div class="mt-space-xs flex items-center text-label-sm font-label-sm text-outline">
+<span>ভাড়া দেওয়ার জন্য প্রস্তুত</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container-high">
+<div class="h-full bg-outline w-[65%]"></div>
+</div>
+</div>
+<!-- Card 4: Today's Collection -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-[#E4EAE6] elevation-level-1 relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">আজকের ভাড়া আদায়</span>
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+</div>
+<div class="flex items-baseline">
+<span class="text-headline-md font-headline-md text-primary font-bold tracking-tight font-currency-display">৳১,৬৮০</span>
+</div>
+<div class="mt-space-xs flex items-center text-label-sm font-label-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[12px] mr-0.5">check_circle</span>
+<span>২১ জন পরিশোধিত</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary/20">
+<div class="h-full bg-primary w-[70%]"></div>
+</div>
+</div>
+</div>
+<!-- Overdue Highlight Strip (Tactile Alert Box) -->
+<div class="bg-[#FFF4F2] border border-[#FAD2CF] rounded-xl p-space-md flex items-center justify-between elevation-level-1">
+<div class="flex items-center space-x-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#FFE5E3] flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+<div>
+<div class="flex items-center space-x-1">
+<span class="text-title-sm font-title-sm font-semibold text-error">বকেয়া টোকরি ভাড়া</span>
+<span class="bg-error/10 text-error text-label-sm font-label-sm px-1.5 py-0.5 rounded-full font-bold">১২ জন</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">জরুরি তাগাদা ও আদায়ের তালিকা</p>
+</div>
+</div>
+<div class="text-right">
+<div class="text-headline-sm font-headline-sm font-bold text-error font-currency-display">৳৩,৪০০</div>
+<button class="text-label-sm font-label-sm font-semibold text-error underline hover:text-error/80">তালিকা দেখুন</button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Quick Action Buttons (Utility Grid) -->
+<section aria-label="Quick Operations">
+<h2 class="text-title-sm font-title-sm text-on-surface font-semibold mb-space-xs flex items-center justify-between">
+<span>দ্রুত কার্যক্রম</span>
+<span class="text-label-sm font-label-sm text-primary font-semibold">দৈনিক রেট: ৳৪০/টোকরি</span>
+</h2>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Button 1: Rent Out -->
+<button class="flex items-center space-x-2 bg-primary text-on-primary p-space-md rounded-xl shadow-sm hover:bg-primary/95 active:scale-[0.98] transition-all" type="button">
+<div class="w-8 h-8 rounded-lg bg-on-primary/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</div>
+<div class="text-left">
+<span class="block text-body-sm font-body-sm font-semibold leading-tight">+ নতুন ভাড়া দিন</span>
+<span class="block text-[10px] text-primary-fixed opacity-90">Rent Out Tokri</span>
+</div>
+</button>
+<!-- Button 2: Return Tokri -->
+<button class="flex items-center space-x-2 bg-surface-container-lowest border border-[#E4EAE6] text-on-surface p-space-md rounded-xl elevation-level-1 hover:bg-surface-container-high active:scale-[0.98] transition-all" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_returned</span>
+</div>
+<div class="text-left">
+<span class="block text-body-sm font-body-sm font-semibold leading-tight text-on-surface">টোকরি ফেরত নিন</span>
+<span class="block text-[10px] text-outline">Return Tokri</span>
+</div>
+</button>
+<!-- Button 3: Attendance / Absence -->
+<button class="flex items-center space-x-2 bg-surface-container-lowest border border-[#E4EAE6] text-on-surface p-space-md rounded-xl elevation-level-1 hover:bg-surface-container-high active:scale-[0.98] transition-all" type="button">
+<div class="w-8 h-8 rounded-lg bg-[#FFF8E6] flex items-center justify-center text-[#B27300]">
+<span class="material-symbols-outlined text-[20px]">event_busy</span>
+</div>
+<div class="text-left">
+<span class="block text-body-sm font-body-sm font-semibold leading-tight text-on-surface">হাজিরা ও ছুটি</span>
+<span class="block text-[10px] text-outline">Attendance/Leave</span>
+</div>
+</button>
+<!-- Button 4: Set Rate -->
+<button class="flex items-center space-x-2 bg-surface-container-lowest border border-[#E4EAE6] text-on-surface p-space-md rounded-xl elevation-level-1 hover:bg-surface-container-high active:scale-[0.98] transition-all" type="button">
+<div class="w-8 h-8 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">price_change</span>
+</div>
+<div class="text-left">
+<span class="block text-body-sm font-body-sm font-semibold leading-tight text-on-surface">ভাড়া রেট সেটিং</span>
+<span class="block text-[10px] text-outline">৳৪০/দিন বদলান</span>
+</div>
+</button>
+</div>
+</section>
+<!-- SECTION 3: Filter Pills -->
+<section aria-label="Customer Filters" class="pt-space-xs">
+<div class="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none text-nowrap -mx-margin-mobile px-margin-mobile">
+<!-- Active Pill -->
+<button class="h-8 px-space-md rounded-full bg-primary-container text-on-primary text-label-md font-label-md flex items-center space-x-1 shadow-sm font-medium" type="button">
+<span>সকল ভাড়াটিয়া</span>
+<span class="bg-on-primary/20 text-on-primary rounded-full px-1.5 py-0.2 text-[10px]">৪২</span>
+</button>
+<!-- Pill: Overdue -->
+<button class="h-8 px-space-md rounded-full bg-surface-container-lowest border border-[#E4EAE6] text-on-surface text-label-md font-label-md hover:bg-surface-container-high flex items-center space-x-1 font-medium transition-colors" type="button">
+<span class="w-2 h-2 rounded-full bg-error inline-block"></span>
+<span>বকেয়া আছে</span>
+<span class="bg-error/10 text-error rounded-full px-1.5 py-0.2 text-[10px] font-bold">১২</span>
+</button>
+<!-- Pill: Leave -->
+<button class="h-8 px-space-md rounded-full bg-surface-container-lowest border border-[#E4EAE6] text-on-surface text-label-md font-label-md hover:bg-surface-container-high flex items-center space-x-1 font-medium transition-colors" type="button">
+<span class="w-2 h-2 rounded-full bg-[#E08A00] inline-block"></span>
+<span>ছুটি / অনুপস্থিত</span>
+<span class="bg-amber-100 text-[#9E5D00] rounded-full px-1.5 py-0.2 text-[10px]">৪</span>
+</button>
+<!-- Pill: Returns Today -->
+<button class="h-8 px-space-md rounded-full bg-surface-container-lowest border border-[#E4EAE6] text-on-surface text-label-md font-label-md hover:bg-surface-container-high flex items-center space-x-1 font-medium transition-colors" type="button">
+<span>আজকের ফেরত</span>
+<span class="bg-surface-variant text-on-surface-variant rounded-full px-1.5 py-0.2 text-[10px]">৬</span>
+</button>
+</div>
+</section>
+<!-- SECTION 4: Active Rental Customer Cards List -->
+<section aria-label="Customer Cards" class="space-y-space-sm">
+<!-- CARD 1: Active In-flow Customer -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-md elevation-level-1 relative transition-all">
+<div class="flex items-start justify-between">
+<div class="flex space-x-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-title-sm shrink-0 border border-primary/20">
+                কা
+              </div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h3 class="text-title-sm font-title-sm font-bold text-on-surface">কাশেম খালাসী</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed/50 text-primary font-bold">
+                    ভাড়ায় সক্রিয়
+                  </span>
+</div>
+<!-- Tokri Numbers Badge -->
+<div class="flex items-center space-x-1.5 mt-1">
+<span class="text-label-sm font-label-sm text-outline">টোকরি নং:</span>
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded">#১২</span>
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded">#১৩</span>
+<span class="text-body-sm font-body-sm text-outline">(২টি টোকরি)</span>
+</div>
+</div>
+</div>
+<button aria-label="Customer phone call" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Ledger Specs Split -->
+<div class="mt-space-sm pt-space-xs border-t border-[#E4EAE6] grid grid-cols-2 gap-2 text-body-sm font-body-sm">
+<div>
+<span class="text-outline text-label-sm font-label-sm block">দৈনিক ভাড়া রেট</span>
+<span class="font-semibold text-on-surface font-currency-display">৳৪০ × ২ = ৳৮০/দিন</span>
+</div>
+<div class="text-right">
+<span class="text-error text-label-sm font-label-sm block font-medium">বর্তমান বকেয়া (৩ দিন)</span>
+<span class="font-bold text-error font-currency-display">৳২৪০</span>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="mt-space-sm pt-space-xs border-t border-[#E4EAE6]/70 flex space-x-space-sm">
+<button class="flex-1 h-9 rounded-lg bg-primary text-on-primary text-label-md font-label-md font-semibold flex items-center justify-center space-x-1 hover:bg-primary/90 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>ভাড়া জমা নিন</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface text-label-md font-label-md font-semibold flex items-center justify-center space-x-1 hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+<span>টোকরি ফেরত</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: On Leave Customer (Rent Paused) -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E4EAE6] p-space-md elevation-level-1 relative transition-all">
+<div class="flex items-start justify-between">
+<div class="flex space-x-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#FFF8E6] flex items-center justify-center text-[#B27300] font-bold text-title-sm shrink-0 border border-[#F3DB99]">
+                ব
+              </div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h3 class="text-title-sm font-title-sm font-bold text-on-surface">বশির উদ্দিন</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FFF3D6] text-[#A66800] font-bold">
+                    অনুপস্থিত / ছুটি
+                  </span>
+</div>
+<!-- Tokri Numbers Badge -->
+<div class="flex items-center space-x-1.5 mt-1">
+<span class="text-label-sm font-label-sm text-outline">টোকরি নং:</span>
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded">#০৭</span>
+<span class="text-body-sm font-body-sm text-outline">(১টি টোকরি)</span>
+</div>
+</div>
+</div>
+<button aria-label="Customer phone call" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Leave Notice Badge -->
+<div class="mt-space-sm bg-[#FFFDF7] border border-[#FDEBC2] rounded-lg p-space-xs flex items-center space-x-2 text-body-sm font-body-sm text-[#875500]">
+<span class="material-symbols-outlined text-[18px] text-[#C27E00] shrink-0">info</span>
+<span>গ্রামের বাড়ি গেছেন (৩ দিন ছুটি মঞ্জুর • ভাড়া স্থগিত)</span>
+</div>
+<!-- Card Actions -->
+<div class="mt-space-sm pt-space-xs border-t border-[#E4EAE6]/70 flex space-x-space-sm">
+<button class="w-full h-9 rounded-lg bg-surface-container-high border border-outline-variant/60 text-on-surface text-label-md font-label-md font-semibold flex items-center justify-center space-x-1 hover:bg-surface-container-highest active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>ছুটি শেষ করুন (পুনরায় চালু)</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Overdue Critical Customer -->
+<article class="bg-[#FFFDFD] rounded-xl border border-[#FCDAD7] p-space-md elevation-level-1 relative transition-all">
+<div class="flex items-start justify-between">
+<div class="flex space-x-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#FFEBEA] flex items-center justify-center text-error font-bold text-title-sm shrink-0 border border-error/20">
+                আ
+              </div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h3 class="text-title-sm font-title-sm font-bold text-on-surface">আলাল মিয়া</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-error-container text-on-error-container font-bold">
+                    মেয়াদোত্তীর্ণ বকেয়া
+                  </span>
+</div>
+<!-- Tokri Numbers Badge -->
+<div class="flex items-center space-x-1.5 mt-1">
+<span class="text-label-sm font-label-sm text-outline">টোকরি নং:</span>
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded">#২৫</span>
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded">#২৬</span>
+<span class="inline-block bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-bold px-1.5 py-0.5 rounded">#২৭</span>
+<span class="text-body-sm font-body-sm text-outline">(৩টি)</span>
+</div>
+</div>
+</div>
+<button aria-label="Customer phone call" class="w-8 h-8 rounded-full bg-[#FFEBEA] flex items-center justify-center text-error hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Ledger Specs Split -->
+<div class="mt-space-sm pt-space-xs border-t border-[#FCDAD7] flex items-center justify-between text-body-sm font-body-sm">
+<div>
+<span class="text-outline text-label-sm font-label-sm block">৭ দিনের বকেয়া</span>
+<span class="text-on-surface text-body-sm font-body-sm">৩টি টোকরি × ৳৪০/দিন</span>
+</div>
+<div class="text-right">
+<span class="text-error text-label-sm font-label-sm block font-semibold">মোট অপরিশোধিত</span>
+<span class="font-currency-display font-bold text-error text-[18px]">৳৫৬০</span>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="mt-space-sm pt-space-xs border-t border-[#FCDAD7] flex space-x-space-sm">
+<button class="w-full h-9 rounded-lg bg-error text-on-error text-label-md font-label-md font-semibold flex items-center justify-center space-x-1.5 hover:bg-error/90 active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<span>জরুরি তাগাদা পাঠান (Send Reminder)</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Wholesaler Quick Ledger Note (Tactile Hint) -->
+<div class="rounded-lg p-space-sm bg-surface-container border border-outline-variant/50 flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">store</span>
+<span class="text-on-surface-variant text-[12px]">মেসার্স রহমান ট্রেডার্স • প্রতিদিন সকাল ৯টায় হিসাব মেলানো হয়</span>
+</div>
+<span class="text-[11px] font-semibold text-primary underline">লগ দেখুন</span>
+</div>
+</main>
+<!-- Contextual Center Floating Action Button (+ লেনদেন) -->
+<div class="fixed bottom-[74px] left-0 right-0 z-50 flex justify-center pointer-events-none">
+<button class="pointer-events-auto h-12 px-6 rounded-full bg-primary-container text-on-primary flex items-center space-x-2 elevation-level-3 active:scale-95 transition-transform duration-100 font-bold border border-primary-fixed/30 hover:bg-primary" type="button">
+<span class="material-symbols-outlined text-[22px]">add</span>
+<span class="text-title-sm font-title-sm tracking-wide">+ লেনদেন</span>
+</button>
+</div>
+<!-- BottomNavBar (Directly matching JSON shared component and theme tokens) -->
+<!-- JSON: labels ["হোম", "হিসাব", "গ্রাহক", "রিপোর্ট", "মেনু"], icons ["home", "account_balance_wallet", "group", "bar_chart", "menu"] -->
+<!-- Active Tab: "হিসাব" or "গ্রাহক" depending on inventory ledger hub -> "হিসাব" selected for ledger transactions -->
+<nav class="fixed bottom-0 left-0 w-full z-40 bg-surface-container-lowest flex justify-around items-center px-space-xs py-space-xs h-16 shadow-[0_-2px_6px_rgba(23,35,29,0.06)]">
+<!-- Nav 1: হোম -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs active:scale-95 transition-transform duration-100 hover:text-primary" href="#home">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">হোম</span>
+</a>
+<!-- Nav 2: হিসাব (ACTIVE for Tokri Ledger & Accounts) -->
+<a class="flex flex-col items-center justify-center text-primary bg-surface-container rounded-full px-space-md py-space-xs font-semibold active:scale-95 transition-transform duration-100" href="#hisab">
+<span class="material-symbols-outlined text-[22px] fill" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-0.5">হিসাব</span>
+</a>
+<!-- Nav 3: গ্রাহক -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs active:scale-95 transition-transform duration-100 hover:text-primary" href="#customers">
+<span class="material-symbols-outlined text-[22px]">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">গ্রাহক</span>
+</a>
+<!-- Nav 4: রিপোর্ট -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs active:scale-95 transition-transform duration-100 hover:text-primary" href="#reports">
+<span class="material-symbols-outlined text-[22px]">bar_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">রিপোর্ট</span>
+</a>
+<!-- Nav 5: মেনু -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs active:scale-95 transition-transform duration-100 hover:text-primary" href="#menu">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+<span class="text-label-sm font-label-sm mt-0.5">মেনু</span>
+</a>
+</nav>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    // Lightweight tactile feedback simulation for touch screen devices
+    document.querySelectorAll('button, a').forEach(el => {
+      el.addEventListener('touchstart', function() {}, {passive: true});
+    });
+  </script>
+</body></html>

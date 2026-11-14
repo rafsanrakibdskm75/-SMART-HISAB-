@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>ক্যাশ রিকনসিলিয়েশন ও ড্রয়ার হিসাব - Smart Hisab</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#9ae9c3",
+            "secondary-fixed": "#bfe9ff",
+            "tertiary-fixed": "#ffdad7",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#89d6b1",
+            "on-secondary": "#ffffff",
+            "background": "#effdf3",
+            "surface-bright": "#effdf3",
+            "surface-container-low": "#e9f7ed",
+            "on-secondary-container": "#00617f",
+            "on-tertiary-container": "#ffcdca",
+            "tertiary": "#753230",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#005138",
+            "outline": "#6f7a73",
+            "on-error": "#ffffff",
+            "inverse-surface": "#27332d",
+            "on-tertiary-fixed": "#3c0709",
+            "surface-container-high": "#ddece2",
+            "on-surface": "#121e18",
+            "surface-tint": "#176b4d",
+            "surface-container": "#e3f1e7",
+            "primary-fixed": "#a4f3cc",
+            "surface-container-highest": "#d8e6dc",
+            "error-container": "#ffdad6",
+            "primary": "#005138",
+            "on-tertiary-fixed-variant": "#743230",
+            "tertiary-fixed-dim": "#ffb3af",
+            "outline-variant": "#bec9c1",
+            "surface": "#effdf3",
+            "secondary": "#006685",
+            "inverse-on-surface": "#e6f4ea",
+            "tertiary-container": "#924946",
+            "secondary-container": "#91dbff",
+            "inverse-primary": "#89d6b1",
+            "on-surface-variant": "#3f4943",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#002114",
+            "primary-container": "#176b4d",
+            "error": "#ba1a1a",
+            "on-background": "#121e18",
+            "surface-variant": "#d8e6dc",
+            "surface-dim": "#cfddd4",
+            "on-secondary-fixed-variant": "#004d65",
+            "secondary-fixed-dim": "#86d0f3",
+            "on-secondary-fixed": "#001f2a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "margin-mobile": "0.875rem",
+            "space-2xl": "2rem",
+            "gutter-mobile": "0.75rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "space-2xs": "0.125rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Noto Sans", "Noto Sans Bengali"],
+            "headline-lg": ["Inter", "Noto Sans Bengali"],
+            "body-md": ["Noto Sans", "Noto Sans Bengali"],
+            "label-lg": ["Inter", "Noto Sans Bengali"],
+            "label-sm": ["Inter", "Noto Sans Bengali"],
+            "headline-sm": ["Inter", "Noto Sans Bengali"],
+            "title-md": ["Noto Sans", "Noto Sans Bengali"],
+            "label-md": ["Inter", "Noto Sans Bengali"],
+            "headline-lg-mobile": ["Inter", "Noto Sans Bengali"],
+            "currency-display": ["Inter", "Noto Sans Bengali"],
+            "headline-md": ["Inter", "Noto Sans Bengali"],
+            "body-lg": ["Noto Sans", "Noto Sans Bengali"],
+            "title-sm": ["Noto Sans", "Noto Sans Bengali"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-lg": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "label-md": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "currency-display": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-lg": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "title-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    body {
+      background-color: #F6F8F7;
+      color: #121e18;
+      -webkit-font-smoothing: antialiased;
+    }
+    .tactile-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E4EAE6;
+      box-shadow: 0px 1px 3px rgba(23, 35, 29, 0.04), 0px 1px 2px rgba(23, 35, 29, 0.02);
+    }
+    .tactile-card-pressed:active {
+      transform: scale(0.985);
+      transition: transform 100ms ease;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F6F8F7] min-h-screen text-on-surface antialiased pb-28 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top App Bar Navigation Shell -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/60 shadow-sm">
+<div class="max-w-md mx-auto flex items-center justify-between px-margin-mobile py-space-sm h-14">
+<div class="flex items-center space-x-2">
+<button aria-label="Go Back" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-title-md font-title-md font-bold text-on-surface tracking-tight leading-tight">ক্যাশ রিকনসিলিয়েশন ও সমন্বয়</h1>
+<span class="text-label-sm font-label-sm text-on-surface-variant">দোকান ও ব্যক্তিগত ক্যাশ অডিট</span>
+</div>
+</div>
+<div class="flex items-center space-x-1">
+<button class="px-2.5 py-1 bg-surface-container-low border border-outline-variant/70 rounded-full flex items-center space-x-1 text-on-surface hover:bg-surface-container transition-colors duration-150">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="text-label-sm font-label-sm font-medium">আজ, ২৭ মার্চ</span>
+</button>
+<button aria-label="Audit Information" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Container (Mobile Frame Constraint 360px - 420px) -->
+<main class="max-w-md mx-auto px-margin-mobile pt-space-md space-y-space-md">
+<!-- Isolation Notice Banner -->
+<div class="tactile-card rounded-xl p-space-sm bg-surface-container-low flex items-center justify-between border-l-4 border-l-primary">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon" data-icon="verified_user">verified_user</span>
+<div>
+<p class="text-label-lg font-label-lg text-primary font-bold">ব্যবসায় ও ব্যক্তিগত লেজার সম্পূর্ণ পৃথক</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">কোনো ভুল মিশ্রণ নেই • জিরো ডাবল-কাউন্টিং নিশ্চিত</p>
+</div>
+</div>
+<span class="text-[10px] bg-primary text-on-primary font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider">Protected</span>
+</div>
+<!-- Dual Balance Comparison Section -->
+<section class="grid grid-cols-2 gap-gutter-mobile">
+<!-- Business Drawer Card -->
+<div class="tactile-card rounded-xl p-space-md bg-surface-container-lowest relative overflow-hidden border border-outline-variant">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-label-sm font-label-sm font-semibold text-primary uppercase tracking-wide">দোকানের ক্যাশ ড্রয়ার</span>
+<span class="w-6 h-6 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[14px]" data-icon="point_of_sale">point_of_sale</span>
+</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-0.5">ড্রয়ার ব্যালেন্স (Expected)</p>
+<div class="flex items-baseline space-x-0.5 text-on-surface">
+<span class="text-title-sm font-bold">৳</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary">৪২,৩৫০</span>
+</div>
+<div class="mt-2 pt-2 border-t border-outline-variant/40 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">স্থিতি: সক্রিয়</span>
+<span class="text-primary font-medium flex items-center">
+<span class="material-symbols-outlined text-[12px] mr-0.5" data-icon="check_circle">check_circle</span>মিল আছে
+          </span>
+</div>
+</div>
+<!-- Owner Personal Wallet Card -->
+<div class="tactile-card rounded-xl p-space-md bg-surface-container-lowest relative overflow-hidden border border-outline-variant">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-label-sm font-label-sm font-semibold text-secondary uppercase tracking-wide">মালিকের ব্যক্তিগত ক্যাশ</span>
+<span class="w-6 h-6 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[14px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-0.5">পকেট / ব্যক্তিগত ওয়ালেট</p>
+<div class="flex items-baseline space-x-0.5 text-on-surface">
+<span class="text-title-sm font-bold">৳</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-secondary">১৪,৫০০</span>
+</div>
+<div class="mt-2 pt-2 border-t border-outline-variant/40 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">ব্যক্তিগত তহবিল</span>
+<span class="text-secondary font-medium">আলাদা রাখা</span>
+</div>
+</div>
+</section>
+<!-- Two-Way Transfer & Reconcile Quick Actions -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<h2 class="text-title-sm font-title-sm font-bold text-on-surface">উত্তোলন ও মূলধন লেনদেন (Transfer Actions)</h2>
+<span class="text-label-sm font-label-sm text-primary font-medium">সমন্বয় টুল</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- Action 1: Owner Drawing -->
+<button class="tactile-card tactile-card-pressed rounded-xl p-space-sm flex flex-col items-center text-center justify-between border hover:border-tertiary-container transition-all group">
+<div class="w-10 h-10 rounded-full bg-error-container/60 text-error flex items-center justify-center mb-1.5 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="outbox">outbox</span>
+</div>
+<div>
+<span class="text-label-md font-label-md font-bold text-on-surface block leading-tight">মালিক উত্তোলন</span>
+<span class="text-[10px] text-error font-medium">Draw Out (-ড্রয়ার)</span>
+</div>
+<span class="mt-1 text-[9px] text-on-surface-variant leading-none">ব্যক্তিগত খরচ</span>
+</button>
+<!-- Action 2: Capital In -->
+<button class="tactile-card tactile-card-pressed rounded-xl p-space-sm flex flex-col items-center text-center justify-between border hover:border-primary transition-all group">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/60 text-primary flex items-center justify-center mb-1.5 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="move_to_inbox">move_to_inbox</span>
+</div>
+<div>
+<span class="text-label-md font-label-md font-bold text-on-surface block leading-tight">মূলধন জমা</span>
+<span class="text-[10px] text-primary font-medium">Capital In (+ড্রয়ার)</span>
+</div>
+<span class="mt-1 text-[9px] text-on-surface-variant leading-none">পকেট থেকে দোকানে</span>
+</button>
+<!-- Action 3: MFS Adjust -->
+<button class="tactile-card tactile-card-pressed rounded-xl p-space-sm flex flex-col items-center text-center justify-between border hover:border-secondary transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 text-secondary flex items-center justify-center mb-1.5 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="sync_alt">sync_alt</span>
+</div>
+<div>
+<span class="text-label-md font-label-md font-bold text-on-surface block leading-tight">এমএফএস অ্যাডজাস্ট</span>
+<span class="text-[10px] text-secondary font-medium">MFS Rebalance</span>
+</div>
+<span class="mt-1 text-[9px] text-on-surface-variant leading-none">বিকাশ/নগদ ক্যাশ</span>
+</button>
+</div>
+</section>
+<!-- Daily Physical Cash Audit & Note Counter -->
+<section class="tactile-card rounded-xl p-space-md border border-outline-variant bg-surface-container-lowest">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/60">
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="calculate">calculate</span>
+</div>
+<div>
+<h3 class="text-title-sm font-title-sm font-bold text-on-surface">বাস্তব ক্যাশ গণনা (Physical Note Audit)</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">ক্যাশ ড্রয়ারের আসল নোট গুনে মিলিয়ে নিন</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">লাইভ কাউন্ট</span>
+</div>
+<!-- Currency Note Grid Breakdown -->
+<div class="mt-space-sm space-y-2">
+<!-- 1000 Note Row -->
+<div class="flex items-center justify-between py-1.5 px-2 bg-surface-container-low/60 rounded-lg">
+<div class="flex items-center space-x-2">
+<span class="w-12 text-center py-0.5 bg-surface-container-lowest border border-outline-variant/60 rounded text-label-md font-bold text-primary">৳১০০০</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">× ৩৫ টি নোট</span>
+</div>
+<div class="text-right">
+<span class="text-body-md font-body-md font-bold text-on-surface font-currency-display">৳ ৩৫,০০০</span>
+</div>
+</div>
+<!-- 500 Note Row -->
+<div class="flex items-center justify-between py-1.5 px-2 bg-surface-container-low/60 rounded-lg">
+<div class="flex items-center space-x-2">
+<span class="w-12 text-center py-0.5 bg-surface-container-lowest border border-outline-variant/60 rounded text-label-md font-bold text-primary">৳৫০০</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">× ১০ টি নোট</span>
+</div>
+<div class="text-right">
+<span class="text-body-md font-body-md font-bold text-on-surface font-currency-display">৳ ৫,০০০</span>
+</div>
+</div>
+<!-- 100 Note Row -->
+<div class="flex items-center justify-between py-1.5 px-2 bg-surface-container-low/60 rounded-lg">
+<div class="flex items-center space-x-2">
+<span class="w-12 text-center py-0.5 bg-surface-container-lowest border border-outline-variant/60 rounded text-label-md font-bold text-primary">৳১০০</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">× ২০ টি নোট</span>
+</div>
+<div class="text-right">
+<span class="text-body-md font-body-md font-bold text-on-surface font-currency-display">৳ ২,০০০</span>
+</div>
+</div>
+<!-- Small Notes & Coins Row -->
+<div class="flex items-center justify-between py-1.5 px-2 bg-surface-container-low/60 rounded-lg">
+<div class="flex items-center space-x-2">
+<span class="w-12 text-center py-0.5 bg-surface-container-lowest border border-outline-variant/60 rounded text-[10px] font-bold text-on-surface">৫০/২০/১০</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">ভাঙতি ও কয়েন</span>
+</div>
+<div class="text-right">
+<span class="text-body-md font-body-md font-bold text-on-surface font-currency-display">৳ ৩৫০</span>
+</div>
+</div>
+</div>
+<!-- Summation Comparison Banner -->
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container border border-outline-variant/50 space-y-2">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">হাতে গোনা বাস্তব ক্যাশ (Physical Count):</span>
+<span class="font-bold text-on-surface">৳৪২,৩৫০</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">সিস্টেম লেজার ক্যাশ (Ledger Balance):</span>
+<span class="font-bold text-on-surface">৳৪২,৩৫০</span>
+</div>
+<div class="pt-2 border-t border-outline-variant/70 flex justify-between items-center">
+<div class="flex items-center space-x-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px] fill-icon" data-icon="check_circle">check_circle</span>
+<span class="text-title-sm font-title-sm font-bold">পার্থক্য (Difference): ৳০.০০</span>
+</div>
+<span class="bg-primary-container text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">নিখুঁত মিল</span>
+</div>
+</div>
+</section>
+<!-- Today's Reconciled Movement Log -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<div>
+<h2 class="text-title-sm font-title-sm font-bold text-on-surface">আজকের সমন্বয় লেনদেন খতিয়ান</h2>
+<p class="text-label-sm font-label-sm text-on-surface-variant">মালিক ও ড্রয়ারের ক্যাশ মুভমেন্ট অডিট ট্রেইল</p>
+</div>
+<button class="text-primary text-label-sm font-semibold hover:underline">সব দেখুন</button>
+</div>
+<div class="tactile-card rounded-xl overflow-hidden divide-y divide-outline-variant/40">
+<!-- Entry 1: Owner Drawing -->
+<div class="p-space-md flex items-start justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start space-x-3">
+<div class="w-10 h-10 rounded-full bg-error-container/50 text-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_upward">arrow_upward</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="text-body-md font-body-md font-bold text-on-surface">মালিক উত্তোলন (Family Send)</span>
+<span class="text-[10px] px-1.5 py-0.2 bg-tertiary-fixed text-on-tertiary-fixed font-semibold rounded">মালিক ড্র</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">দোকান ক্যাশ ড্রয়ার থেকে ক্যাশ উত্তোলন</p>
+<div class="flex items-center space-x-2 mt-1 text-[11px] text-outline font-medium">
+<span>#DRW-8921</span>
+<span>•</span>
+<span>১১:৩০ AM</span>
+<span>•</span>
+<span class="text-on-surface-variant">ক্যাশ ড্রয়ার হ্রাস</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-bold text-error tracking-tight font-currency-display">-৳ ৫,০০০</span>
+<p class="text-[10px] text-on-surface-variant mt-0.5">ব্যক্তিগত পকেট +৳৫,০০০</p>
+</div>
+</div>
+<!-- Entry 2: Capital In -->
+<div class="p-space-md flex items-start justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start space-x-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/50 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_downward">arrow_downward</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="text-body-md font-body-md font-bold text-on-surface">ব্যক্তিগত মূলধন জমা (Capital Deposit)</span>
+<span class="text-[10px] px-1.5 py-0.2 bg-primary-fixed text-on-primary-fixed font-semibold rounded">মূলধন ইকুইটি</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">পাইকারি মালের জন্য ব্যক্তিগত টাকা ড্রয়ারে প্রদান</p>
+<div class="flex items-center space-x-2 mt-1 text-[11px] text-outline font-medium">
+<span>#CAP-4402</span>
+<span>•</span>
+<span>০৯:১৫ AM</span>
+<span>•</span>
+<span class="text-primary font-semibold">ড্রয়ার ক্যাশ বৃদ্ধি</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-bold text-primary tracking-tight font-currency-display">+৳ ১০,০০০</span>
+<p class="text-[10px] text-on-surface-variant mt-0.5">ব্যক্তিগত ফান্ড -৳১০,০০০</p>
+</div>
+</div>
+<!-- Entry 3: MFS Reimbursement -->
+<div class="p-space-md flex items-start justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start space-x-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/60 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="currency_exchange">currency_exchange</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="text-body-md font-body-md font-bold text-on-surface">বিকাশ ক্যাশআউট কাউন্টার সমন্বয়</span>
+<span class="text-[10px] px-1.5 py-0.2 bg-secondary-fixed text-on-secondary-container font-semibold rounded">এমএফএস রিইমবার্স</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">ব্যক্তিগত বিকাশ থেকে ড্রয়ার ক্যাশ রিপ্লেনিশ</p>
+<div class="flex items-center space-x-2 mt-1 text-[11px] text-outline font-medium">
+<span>#MFS-3109</span>
+<span>•</span>
+<span>০২:৪৫ PM</span>
+<span>•</span>
+<span class="text-secondary font-semibold">সমকক্ষ ক্যাশ বিনিময়</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-bold text-secondary tracking-tight font-currency-display">৳ ২,০০০</span>
+<p class="text-[10px] text-primary font-medium mt-0.5">সুষম ব্যালেন্স</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Closing Reconciliation Checklist & Lock Section -->
+<section class="tactile-card rounded-xl p-space-md border border-outline-variant bg-surface-container-low/40 space-y-space-sm">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary" data-icon="lock_clock">lock_clock</span>
+<h3 class="text-title-sm font-title-sm font-bold text-on-surface">দিনের সমাপ্তি ক্যাশ লক ও অডিট ভেরিফিকেশন</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+        দোকান বন্ধ করার পূর্বে তিনটি শর্ত পূরণ নিশ্চিত করে ক্যাশ ড্রয়ার লক করুন। একবার লক করলে আজকের ড্রয়ার হিসাব অপরিবর্তনশীল হবে।
+      </p>
+<!-- Checklist Items -->
+<div class="space-y-2 pt-1">
+<label class="flex items-center space-x-2.5 bg-surface-container-lowest p-2 rounded-lg border border-outline-variant/60 cursor-pointer">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">দৈনিক বিক্রয় ও ক্যাশ কালেকশন ভাউচার মেলানো হয়েছে</span>
+</label>
+<label class="flex items-center space-x-2.5 bg-surface-container-lowest p-2 rounded-lg border border-outline-variant/60 cursor-pointer">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">সকল মালিক উত্তোলন ও ব্যক্তিগত খরচ রেজিস্টারভুক্ত</span>
+</label>
+<label class="flex items-center space-x-2.5 bg-surface-container-lowest p-2 rounded-lg border border-outline-variant/60 cursor-pointer">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">ড্রয়ারের আসল নোট গুনে পার্থক্য ৳০.০০ নিশ্চিত হয়েছে</span>
+</label>
+</div>
+<!-- Action Buttons -->
+<div class="pt-2 space-y-2">
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary font-bold rounded-xl shadow-[0_4px_14px_rgba(23,107,77,0.28)] flex items-center justify-center space-x-2 active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+<span class="text-title-sm font-title-sm">ক্যাশ ড্রয়ার লক ও হিসাব ক্লোজ করুন</span>
+</button>
+<button class="w-full h-10 bg-surface-container-lowest hover:bg-surface-container border border-outline-variant text-on-surface font-semibold rounded-xl flex items-center justify-center space-x-2 active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="text-body-md font-body-md">অডিট রিপোর্ট PDF ডাউনলোড</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Rendered from Shared Components JSON blueprint) -->
+<nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs h-16 bg-surface-container-lowest border-t border-outline-variant shadow-[0_-2px_6px_rgba(23,35,29,0.06)]">
+<!-- Item 1: Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">হোম</span>
+</a>
+<!-- Item 2: Hisab / Balance (ACTIVE for Cash Reconciliation & Drawer Audit) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary bg-surface-container rounded-full px-space-md py-space-xs font-semibold hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px] fill-icon" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-0.5">হিসাব</span>
+</a>
+<!-- Item 3: Customer -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="group">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">গ্রাহক</span>
+</a>
+<!-- Item 4: Report -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="bar_chart">bar_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">রিপোর্ট</span>
+</a>
+<!-- Item 5: Menu -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu">menu</span>
+<span class="text-label-sm font-label-sm mt-0.5">মেনু</span>
+</a>
+</nav>
+<script>
+    // Micro-interaction for feedback on quick buttons
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (!this.classList.contains('active:scale-95') && !this.classList.contains('active:scale-98')) {
+          this.classList.add('opacity-90');
+          setTimeout(() => this.classList.remove('opacity-90'), 150);
+        }
+      });
+    });
+  </script>
+</body></html>

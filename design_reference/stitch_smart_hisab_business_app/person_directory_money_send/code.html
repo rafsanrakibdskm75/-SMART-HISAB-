@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>স্মার্ট হিসাব - ব্যক্তি ডিরেক্টরি ও টাকা পাঠানো</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#176b4d",
+            "tertiary": "#753230",
+            "inverse-on-surface": "#e6f4ea",
+            "surface-container-high": "#ddece2",
+            "on-tertiary-fixed-variant": "#743230",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#89d6b1",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#3c0709",
+            "tertiary-container": "#924946",
+            "on-background": "#121e18",
+            "tertiary-fixed-dim": "#ffb3af",
+            "secondary-fixed": "#bfe9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#cfddd4",
+            "on-primary-fixed": "#002114",
+            "surface-container": "#e3f1e7",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#001f2a",
+            "background": "#effdf3",
+            "primary-container": "#176b4d",
+            "surface-container-low": "#e9f7ed",
+            "on-surface": "#121e18",
+            "secondary-container": "#91dbff",
+            "outline-variant": "#bec9c1",
+            "on-primary-fixed-variant": "#005138",
+            "primary-fixed": "#a4f3cc",
+            "on-primary-container": "#9ae9c3",
+            "error": "#ba1a1a",
+            "inverse-surface": "#27332d",
+            "primary": "#005138",
+            "secondary-fixed-dim": "#86d0f3",
+            "surface-variant": "#d8e6dc",
+            "secondary": "#006685",
+            "inverse-primary": "#89d6b1",
+            "on-secondary-fixed-variant": "#004d65",
+            "on-tertiary-container": "#ffcdca",
+            "on-surface-variant": "#3f4943",
+            "surface-bright": "#effdf3",
+            "on-primary": "#ffffff",
+            "surface": "#effdf3",
+            "surface-container-highest": "#d8e6dc",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#00617f",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f7a73",
+            "tertiary-fixed": "#ffdad7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-xl": "1.5rem",
+            "space-2xs": "0.125rem",
+            "space-lg": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "margin-mobile": "0.875rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "body-sm": ["Noto Sans"],
+            "currency-display": ["Inter"],
+            "label-md": ["Inter"],
+            "title-sm": ["Noto Sans"],
+            "title-md": ["Noto Sans"],
+            "label-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Noto Sans"],
+            "headline-lg-mobile": ["Inter"],
+            "body-md": ["Noto Sans"],
+            "label-sm": ["Inter"],
+            "headline-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .tactile-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E4EAE6;
+      box-shadow: 0px 1px 3px rgba(23, 35, 29, 0.04), 0px 1px 2px rgba(23, 35, 29, 0.02);
+    }
+    .tactile-card-pressed {
+      box-shadow: 0px 4px 12px rgba(23, 35, 29, 0.06), 0px 1px 3px rgba(23, 35, 29, 0.04);
+    }
+    .tactile-fab-shadow {
+      box-shadow: 0px 8px 24px rgba(23, 107, 77, 0.22), 0px 2px 6px rgba(23, 35, 29, 0.08);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen flex flex-col justify-between selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top App Bar (Shared Component Anchor) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A dignified Bangladeshi merchant avatar portrait with traditional cap and neat grooming, styled in warm clean natural lighting with emerald tones and subtle soft backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfDXfsQ7Q1RkRnFMVDRmW79DcBk0AukCRnCk6FFAaycxoQ-PHdsjV68DecPE0-r0JpU156PD1_fwf0Jc2h_Hdxfxq2wznOxBrA7SnZoxx6PEDgxwgvUUD-t032OeuEwrewIoESRndNt_bluJrkejm96l6KVxi9hWI93-bSjQ2wSK49CYMveExb45SoPz1LkdQU-k_9QVhpHj8ZsW7YJ4E62LArLK0rk2HAa4uBsbQ"/>
+</div>
+<div>
+<h1 class="text-title-md font-title-md font-semibold text-on-surface dark:text-inverse-on-surface leading-tight">মেসার্স রহমান ট্রেডার্স</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          টাকার হিসাব ও পার্সোনাল লেজার
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Notifications" class="p-space-xs rounded-full text-primary dark:text-inverse-primary hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="w-full max-w-md mx-auto px-margin-mobile pt-space-md pb-24 flex-1">
+<!-- Directory Search & Header Area -->
+<section class="mb-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider font-semibold">কন্ট্যাক্টস ও খাতা</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">ব্যক্তি ও আত্মীয় ডিরেক্টরি</h2>
+</div>
+<button class="h-8 px-space-sm bg-surface-container text-primary rounded-full flex items-center gap-1 text-label-md font-label-md border border-outline-variant hover:bg-surface-container-high transition-colors active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="person_add">person_add</span>
+<span>+ নতুন ব্যক্তি</span>
+</button>
+</div>
+<!-- Utilitarian Search Box -->
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</span>
+<input class="w-full bg-surface-container-lowest rounded-lg border border-outline-variant pl-10 pr-10 py-2 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="নাম, সম্পর্ক বা মোবাইল নম্বর দিয়ে খুঁজুন..." type="search"/>
+<button class="absolute inset-y-0 right-2 flex items-center px-1 text-outline hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="mic">mic</span>
+</button>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-2 mt-2.5 overflow-x-auto pb-1 no-scrollbar">
+<button class="h-7 px-3 rounded-full bg-primary-container text-on-primary text-label-md font-label-md flex items-center gap-1 whitespace-nowrap shadow-sm" type="button">
+<span>সবাই (২৪)</span>
+</button>
+<button class="h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container text-label-md font-label-md flex items-center gap-1 whitespace-nowrap" type="button">
+<span>আত্মীয়-স্বজন (৭)</span>
+</button>
+<button class="h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container text-label-md font-label-md flex items-center gap-1 whitespace-nowrap" type="button">
+<span>দেনা / ধার (৫)</span>
+</button>
+<button class="h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container text-label-md font-label-md flex items-center gap-1 whitespace-nowrap" type="button">
+<span>ভাড়া ও বিল (৩)</span>
+</button>
+</div>
+</section>
+<!-- Person Spotlight Profile Card (ছোট চাচি) -->
+<section class="tactile-card rounded-xl p-space-lg mb-space-lg relative overflow-hidden border border-outline-variant">
+<!-- Top Subtle Status Accent Line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container via-surface-tint to-primary"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container ring-2 ring-primary-container/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A warm, respectful portrait of a senior Bangladeshi woman in a serene rural courtyard setting, soft natural ambient daylight, dignified and peaceful countenance, high-trust minimalist lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYEOfB-7xoBFoVi-p87f5hVIpvOEuHX7H6cZcKbWGnSK-M_K5mgVEKzqNQnqyZpXukuWhdyaeQ-Z5bueFk0KiwfO7i9S_-2VukjtSap7SA8fQ4f7s0WAJudVb20k_Zg8sebIOPHEtemqmB3Nq2P3jx32l3uD2ZSr3Zo2yTCW69smnvTA9ex77Q046uu-XPSWY3xyJPNPdEErrxtohdd-slXYMyRWJSUf51Xqy-u20"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white" title="সক্রিয় যোগাযোগ"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<h3 class="text-title-md font-title-md font-bold text-on-surface">ছোট চাচি</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-primary border border-outline-variant">
+                আত্মীয় (Family Support)
+              </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="phone_iphone">phone_iphone</span>
+<span class="font-currency-display tracking-tight text-on-surface">01733-889900</span>
+</p>
+<p class="text-body-sm font-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span>কুমিল্লা গ্রামের বাড়ি</span>
+</p>
+</div>
+</div>
+<button aria-label="Person Options" class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Total Stats Strip (BDT Currency Split Ledger) -->
+<div class="mt-4 pt-3.5 border-t border-outline-variant grid grid-cols-3 gap-2 bg-surface-container-low rounded-lg p-2.5">
+<div>
+<span class="text-label-sm font-label-sm text-outline block">মোট পাঠানো</span>
+<div class="text-title-sm font-title-sm font-bold text-primary flex items-baseline">
+<span class="font-headline-sm mr-0.5">৳</span>১৮,৫০০
+          </div>
+<span class="text-label-sm font-label-sm text-on-surface-variant text-[10px]">১০টি লেনদেন</span>
+</div>
+<div class="border-l border-outline-variant/60 pl-2">
+<span class="text-label-sm font-label-sm text-outline block">মোট গ্রহণ</span>
+<div class="text-title-sm font-title-sm font-bold text-on-surface flex items-baseline">
+<span class="font-headline-sm mr-0.5">৳</span>০.০০
+          </div>
+<span class="text-label-sm font-label-sm text-outline text-[10px]">ফেরত প্রযোজ্য নয়</span>
+</div>
+<div class="border-l border-outline-variant/60 pl-2">
+<span class="text-label-sm font-label-sm text-outline block">দেনা/পাওনা</span>
+<div class="text-title-sm font-title-sm font-bold text-on-surface-variant flex items-baseline">
+<span class="font-headline-sm mr-0.5">৳</span>০
+          </div>
+<span class="inline-block text-[10px] text-primary font-medium">সহায়তা / অনুদান</span>
+</div>
+</div>
+<!-- Quick Action Button Row -->
+<div class="mt-3.5 grid grid-cols-3 gap-2">
+<button class="col-span-1 h-9 px-2 bg-primary-container hover:bg-primary text-on-primary rounded-lg flex items-center justify-center gap-1 text-label-md font-label-md font-semibold transition-all active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="send_money">send_money</span>
+<span>টাকা পাঠান</span>
+</button>
+<a class="col-span-1 h-9 px-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg flex items-center justify-center gap-1 text-label-md font-label-md hover:bg-surface-container transition-all active:scale-95" href="tel:01733889900">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="call">call</span>
+<span>কল করুন</span>
+</a>
+<button class="col-span-1 h-9 px-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg flex items-center justify-center gap-1 text-label-md font-label-md hover:bg-surface-container transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="receipt_long">receipt_long</span>
+<span>এসএমএস রসিদ</span>
+</button>
+</div>
+</section>
+<!-- Quick "Send Money" Popup / Card (Highlighted Drawer-Like Bento Block) -->
+<section class="tactile-card rounded-xl p-space-lg mb-space-lg border-2 border-primary-container/30 bg-surface-container-lowest shadow-md">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+</span>
+<div>
+<h4 class="text-title-sm font-title-sm text-on-surface font-bold">তাত্ক্ষণিক টাকা প্রেরণ কার্ড</h4>
+<p class="text-label-sm font-label-sm text-outline">স্বয়ংক্রিয় ভাউচার ও রসিদ তৈরি হবে</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed-variant font-semibold flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          সফল লেনদেন
+        </span>
+</div>
+<!-- Card Form Fields Representation -->
+<div class="mt-3 space-y-2.5">
+<!-- Recipient & Amount Highlight -->
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-surface-container-low rounded-lg p-2 border border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline block">নির্বাচিত প্রাপক</span>
+<span class="text-title-sm font-title-sm font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="account_circle">account_circle</span>
+              ছোট চাচি
+            </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 border border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline block">পাঠানো পরিমাণ</span>
+<span class="text-title-md font-title-md font-bold text-primary font-currency-display">
+              ৳৫০০<span class="text-label-sm font-normal text-outline">.০০</span>
+</span>
+</div>
+</div>
+<!-- MFS Channel & Purpose Details -->
+<div class="bg-surface-container-low/70 rounded-lg p-2.5 border border-outline-variant space-y-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline" data-icon="savings">savings</span>
+              উদ্দেশ্য / পারপাস:
+            </span>
+<span class="font-semibold text-on-surface">পরিবার সহায়তা (Family Aid)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#F05A28]" data-icon="payments">payments</span>
+              প্রেরণ মাধ্যম:
+            </span>
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#F05A28]"></span>
+              Nagad (01733-889900)
+            </span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline" data-icon="calendar_month">calendar_month</span>
+              তারিখ ও আইডি:
+            </span>
+<span class="text-outline font-currency-display text-body-sm">১২ মার্চ ২০২৫ • NG882194</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-2 px-3 bg-surface-container text-primary hover:bg-surface-container-high rounded-lg text-label-md font-label-md font-semibold flex items-center justify-center gap-1 border border-outline-variant" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="share">share</span>
+            রসিদ শেয়ার করুন
+          </button>
+<button class="flex-1 py-2 px-3 bg-primary-container text-on-primary hover:bg-primary rounded-lg text-label-md font-label-md font-semibold flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="repeat">repeat</span>
+            আবার পাঠান
+          </button>
+</div>
+</div>
+</section>
+<!-- Transaction History with this Person -->
+<section class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="history_edu">history_edu</span>
+<h3 class="text-title-md font-title-md font-bold text-on-surface">ছোট চাচির সাথে পূর্বের লেনদেন</h3>
+</div>
+<button class="text-primary text-label-md font-label-md font-semibold hover:underline" type="button">
+          সব দেখুন (১০)
+        </button>
+</div>
+<div class="tactile-card rounded-xl overflow-hidden divide-y divide-outline-variant/60">
+<!-- History Item 1 -->
+<article class="p-space-md flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-[#F05A28] border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-semibold">পারিবারিক সহায়তা</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-currency-display">Nagad</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">১২ মার্চ, ২০২৫ • TrxID: NG882194</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-title-sm font-bold text-[#16A36A] font-currency-display block">
+              - ৳৫০০
+            </span>
+<button class="text-label-sm font-label-sm text-primary hover:underline flex items-center gap-0.5 justify-end" type="button">
+<span class="material-symbols-outlined text-[12px]" data-icon="content_copy">content_copy</span>
+<span>রসিদ</span>
+</button>
+</div>
+</article>
+<!-- History Item 2 -->
+<article class="p-space-md flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-[#E2136E] border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_hospital">local_hospital</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-semibold">চিকিৎসা সহায়তা</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-[#E2136E] font-currency-display font-medium">bKash</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">১৫ ফেব্রুয়ারি, ২০২৫ • জরুরি ঔষধ ক্রয়</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-title-sm font-bold text-[#16A36A] font-currency-display block">
+              - ৳২,০০০
+            </span>
+<span class="text-label-sm font-label-sm text-outline">সফল</span>
+</div>
+</article>
+<!-- History Item 3 -->
+<article class="p-space-md flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="redeem">redeem</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-semibold">শীতকালীন উপহার</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-medium">ক্যাশ</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">১ জানুয়ারি, ২০২৫ • হাতে প্রদান</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-title-sm font-bold text-[#16A36A] font-currency-display block">
+              - ৳১,৫০০
+            </span>
+<span class="text-label-sm font-label-sm text-outline">হাতে দেওয়া</span>
+</div>
+</article>
+<!-- History Item 4 -->
+<article class="p-space-md flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-title-sm font-title-sm text-on-surface font-semibold">মাদ্রাসা ভর্তি ফি</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-secondary font-medium">ব্যাংক ট্রান্সফার</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">১০ নভেম্বর, ২০২৪ • ইসলামিয়া ব্যাংক</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-title-sm font-title-sm font-bold text-[#16A36A] font-currency-display block">
+              - ৳৫,০০০
+            </span>
+<span class="text-label-sm font-label-sm text-outline">পরিশোধিত</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Other Family & Recipient Directory List -->
+<section class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="groups">groups</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">অন্যান্য আত্মীয় ও লেনদেন গ্রহীতা</h3>
+</div>
+<span class="text-label-sm font-label-sm text-outline">৪টি প্রধান খাতা</span>
+</div>
+<div class="space-y-2.5">
+<!-- Recipient 1: আম্মা -->
+<div class="tactile-card rounded-xl p-space-md flex items-center justify-between hover:border-primary-container/40 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-title-md border border-primary/20">
+              মা
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-title-sm font-title-sm text-on-surface font-bold">বাড়ি (আম্মা)</h4>
+<span class="px-2 py-0.2 text-[10px] rounded-full bg-surface-container text-primary font-medium">মা</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">শেষ পাঠানো: ৫ দিন আগে (৳৫,০০০)</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-outline block">মোট পাঠানো</span>
+<span class="text-title-sm font-title-sm font-bold text-primary font-currency-display">
+              ৳১,৪০,০০০
+            </span>
+</div>
+</div>
+<!-- Recipient 2: বাড়িওয়ালা মোতালেব -->
+<div class="tactile-card rounded-xl p-space-md flex items-center justify-between hover:border-primary-container/40 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-title-md border border-secondary/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="apartment">apartment</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-title-sm font-title-sm text-on-surface font-bold">বাড়িওয়ালা মোতালেব</h4>
+<span class="px-2 py-0.2 text-[10px] rounded-full bg-surface-container text-secondary font-medium">ভাড়া ও বিদ্যুৎ</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">প্রতি মাসে ৳৫,২০০ • চলতি মাস পরিশোধিত</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-outline block">মোট দেওয়া</span>
+<span class="text-title-sm font-title-sm font-bold text-on-surface font-currency-display">
+              ৳৬২,৪০০
+            </span>
+</div>
+</div>
+<!-- Recipient 3: ভাই রফিক (সহোদর ভাই - লোন বাকি) -->
+<div class="tactile-card rounded-xl p-space-md flex items-center justify-between hover:border-tertiary/40 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-error-container flex items-center justify-center text-error font-bold text-title-md border border-error/20">
+              র
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-title-sm font-title-sm text-on-surface font-bold">ভাই রফিক</h4>
+<span class="px-2 py-0.2 text-[10px] rounded-full bg-surface-container text-tertiary font-medium">সহোদর ভাই</span>
+</div>
+<p class="text-body-sm font-body-sm text-error flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px]" data-icon="pending">pending</span>
+                ধার হিসেবে: ৳১০,০০০ পাওনা বাকি
+              </p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-outline block">মোট দেওয়া</span>
+<span class="text-title-sm font-title-sm font-bold text-on-surface font-currency-display">
+              ৳৩৫,০০০
+            </span>
+</div>
+</div>
+<!-- Recipient 4: নিজের হাতখরচ ও বাজার -->
+<div class="tactile-card rounded-xl p-space-md flex items-center justify-between hover:border-primary-container/40 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold text-title-md border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-title-sm font-title-sm text-on-surface font-bold">নিজের হাতখরচ ও বাজার</h4>
+<span class="px-2 py-0.2 text-[10px] rounded-full bg-surface-container text-on-surface-variant font-medium">ব্যক্তিগত খরচ</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">দোকান ও পারিবারিক নিত্যপ্রয়োজন</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-outline block">চলতি মাস</span>
+<span class="text-title-sm font-title-sm font-bold text-on-surface font-currency-display">
+              ৳২৮,৫০০
+            </span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual Floating Action Button (+ লেনদেন) hovering above Bottom Navigation -->
+<div class="fixed bottom-20 left-0 right-0 z-50 flex justify-center pointer-events-none">
+<button class="pointer-events-auto h-12 px-6 rounded-full bg-primary-container hover:bg-primary text-on-primary font-title-md font-bold flex items-center gap-2 tactile-fab-shadow active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="add_circle">add_circle</span>
+<span>+ নতুন লেনদেন যুক্ত করুন</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Shared Component Anchor) -->
+<!-- Active state autonomously set to 'গ্রাহক' (Customer/Directory closest destination) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs h-16 bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-[0_-2px_6px_rgba(23,35,29,0.06)] dark:shadow-none">
+<!-- Item 0: হোম -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">হোম</span>
+</a>
+<!-- Item 1: হিসাব -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-0.5">হিসাব</span>
+</a>
+<!-- Item 2: গ্রাহক (ACTIVE MATCH FOR DIRECTORY/PERSON DETAILS) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-surface-container dark:bg-surface-container-high rounded-full px-space-md py-space-xs font-semibold hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">গ্রাহক</span>
+</a>
+<!-- Item 3: রিপোর্ট -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="bar_chart">bar_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">রিপোর্ট</span>
+</a>
+<!-- Item 4: মেনু -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu">menu</span>
+<span class="text-label-sm font-label-sm mt-0.5">মেনু</span>
+</a>
+</nav>
+<script>
+    // Micro-interactions for tactile feel on cards
+    document.querySelectorAll('.tactile-card').forEach(card => {
+      card.addEventListener('touchstart', () => {
+        card.classList.add('tactile-card-pressed');
+      });
+      card.addEventListener('touchend', () => {
+        card.classList.remove('tactile-card-pressed');
+      });
+    });
+  </script>
+</body></html>

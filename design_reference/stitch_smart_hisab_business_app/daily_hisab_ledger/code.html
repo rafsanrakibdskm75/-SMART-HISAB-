@@ -1,0 +1,222 @@
+<!DOCTYPE html><html class="light" lang="bn"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Smart Hisab - Daily Ledger</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Inter & Noto Sans Bengali / Noto Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#effdf3",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary": "#753230",
+            "primary-fixed-dim": "#89d6b1",
+            "on-secondary-fixed": "#001f2a",
+            "on-primary-container": "#9ae9c3",
+            "on-primary-fixed-variant": "#005138",
+            "on-secondary-fixed-variant": "#004d65",
+            "surface-bright": "#effdf3",
+            "inverse-primary": "#89d6b1",
+            "on-surface-variant": "#3f4943",
+            "outline-variant": "#bec9c1",
+            "secondary": "#006685",
+            "tertiary-fixed-dim": "#ffb3af",
+            "primary-container": "#176b4d",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#00617f",
+            "primary": "#005138",
+            "primary-fixed": "#a4f3cc",
+            "on-surface": "#121e18",
+            "secondary-fixed-dim": "#86d0f3",
+            "on-primary-fixed": "#002114",
+            "inverse-surface": "#27332d",
+            "surface-container": "#e3f1e7",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#e6f4ea",
+            "secondary-container": "#91dbff",
+            "on-tertiary-container": "#ffcdca",
+            "surface-dim": "#cfddd4",
+            "error-container": "#ffdad6",
+            "on-background": "#121e18",
+            "tertiary-fixed": "#ffdad7",
+            "on-error-container": "#93000a",
+            "surface": "#effdf3",
+            "surface-container-low": "#e9f7ed",
+            "surface-container-high": "#ddece2",
+            "surface-variant": "#d8e6dc",
+            "surface-tint": "#176b4d",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#3c0709",
+            "secondary-fixed": "#bfe9ff",
+            "on-tertiary-fixed-variant": "#743230",
+            "tertiary-container": "#924946",
+            "surface-container-highest": "#d8e6dc",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6f7a73"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "0.875rem",
+            "gutter-mobile": "0.75rem",
+            "space-2xs": "0.125rem",
+            "space-2xl": "2rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xl": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "currency-display": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-lg": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "title-sm": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-md": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-sm": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-lg": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "label-lg": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-md": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "label-md": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-sm": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "title-md": ["Noto Sans", "Noto Sans Bengali", "sans-serif"]
+          },
+          "fontSize": {
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F6F8F7] text-on-surface antialiased font-body-md flex justify-center min-h-screen">
+<!-- Mobile Screen Container 390px -->
+<div class="w-full max-w-[390px] bg-[#F6F8F7] flex flex-col min-h-screen shadow-2xl relative pb-[136px]">
+<!-- SHARED COMPONENT: TopAppBar (Exact anchor specification & structure) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface shadow-sm dark:shadow-none w-full sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<div class="flex items-center gap-space-sm">
+<!-- Leading Avatar: Rahman Traders Storefront Avatar -->
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-title-md border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+</div>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md font-semibold text-on-surface dark:text-inverse-on-surface tracking-tight">মেসার্স রহমান ট্রেডার্স</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              অনলাইন ক্যাশবুক • প্রোপাইটর আইডি: #RT-092
+            </span>
+</div>
+</div>
+<!-- Trailing Icon: Notifications -->
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container-high active:scale-95 transition-all text-on-surface-variant relative" title="Notifications">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Sub-Header: Daily Ledger Context & Calendar Navigator -->
+<section class="bg-surface-container-lowest px-margin-mobile pt-space-xs pb-space-sm shadow-[0_1px_3px_rgba(23,35,29,0.04)]"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><h1 class="text-[17px] font-bold text-on-surface tracking-tight">দৈনিক হিসাব খাতা</h1><span class="text-[11px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">১২ মার্চ ২০২৫</span></div><div class="flex items-center gap-1.5"><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="সার্চ"><span class="material-symbols-outlined text-[19px]">search</span></button><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="ফিল্টার"><span class="material-symbols-outlined text-[19px]">tune</span></button></div></div><div class="mt-2.5 flex items-center justify-between bg-surface-container-low/70 px-2 py-1.5 rounded-lg border border-outline-variant/30"><button aria-label="Previous day" class="w-7 h-7 rounded-md bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary shadow-xs active:scale-95"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button><div class="flex items-center gap-1.5 font-semibold text-[13px] text-on-surface"><span class="material-symbols-outlined text-[17px] text-primary">calendar_today</span><span>আজকে, ১২ মার্চ ২০২৫</span></div><button aria-label="Next day" class="w-7 h-7 rounded-md bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary shadow-xs active:scale-95"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button></div></section>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-space-md space-y-space-md">
+<!-- SECTION 2: Daily Financial Balance Strip (Tactile Cards) -->
+<div class="bg-surface-container-lowest rounded-xl p-3 border border-outline-variant/30 shadow-xs grid grid-cols-3 divide-x divide-outline-variant/20"><div class="pr-2"><div class="flex items-center gap-1 text-[11px] font-medium text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-[#16A36A]"></span><span>জমা / আয়</span></div><div class="mt-1 text-[15px] font-currency-display font-bold text-[#16A36A] tracking-tight">+৳৩৫,৮০০</div><div class="text-[10px] text-on-surface-variant/70">Inflow</div></div><div class="px-2.5"><div class="flex items-center gap-1 text-[11px] font-medium text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-[#DC4545]"></span><span>খরচ / ব্যয়</span></div><div class="mt-1 text-[15px] font-currency-display font-bold text-[#DC4545] tracking-tight">-৳১২,৪০০</div><div class="text-[10px] text-on-surface-variant/70">Outflow</div></div><div class="pl-2.5"><div class="flex items-center gap-1 text-[11px] font-medium text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>দিনের উদ্বৃত্ত</span></div><div class="mt-1 text-[15px] font-currency-display font-bold text-primary tracking-tight">+৳২৩,৪০০</div><div class="text-[10px] text-on-surface-variant/70">Net Balance</div></div></div>
+<!-- Cash Drawer Status Bar -->
+<div class="bg-surface-container-lowest rounded-xl px-3 py-2 border border-outline-variant/30 shadow-xs flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">point_of_sale</span><div class="text-[12px] text-on-surface-variant flex items-center gap-2"><span>ড্রয়ার: <strong class="text-on-surface font-semibold">৳৬৪,২৫০</strong></span><span class="text-outline-variant">|</span><span>ওয়ালেট: <strong class="text-on-surface font-semibold">৳৮৪,২০০</strong></span></div></div><button class="px-2 py-0.5 text-[11px] text-primary font-semibold hover:bg-surface-container-low rounded-md transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">sync_alt</span><span>মেলান</span></button></div>
+<!-- SECTION 3: Quick Transaction Filter Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar -mx-margin-mobile px-margin-mobile py-0.5"><button class="shrink-0 h-7 px-3 rounded-full bg-primary text-white text-[12px] font-medium shadow-xs">সকল লেনদেন (২৮)</button><button class="shrink-0 h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant text-[12px] hover:text-primary transition-colors flex items-center gap-1"><span class="text-[#16A36A] font-bold text-[13px]">+</span><span>আয় / বিক্রয়</span></button><button class="shrink-0 h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant text-[12px] hover:text-primary transition-colors flex items-center gap-1"><span class="text-[#DC4545] font-bold text-[13px]">−</span><span>দোকান ব্যয়</span></button><button class="shrink-0 h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant text-[12px] hover:text-primary transition-colors">বাকি আদায়</button><button class="shrink-0 h-7 px-3 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant text-[12px] hover:text-primary transition-colors">এমএফএস ও রিচার্জ</button></div>
+<!-- SECTION 5: Accounting Integrity Callout -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-on-surface-variant shadow-xs"><span class="material-symbols-outlined text-[16px] text-primary">verified</span><span>মোট ৮টি ক্যাশ ট্রান্সফার ও ওয়ালেট রিফিল বাদ দিয়ে নিট পরিচালন হিসাব প্রদর্শিত হচ্ছে।</span></div>
+<!-- SECTION 4: Chronological Daily Ledger Entries (আজকের রিয়েল-টাইম লেনদেন তালিকা) -->
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="text-title-sm font-title-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="receipt_long">receipt_long</span>
+<span>আজকের রিয়েল-টাইম খতিয়ান তালিকা</span>
+</h2>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">৭টি দৃশ্যমান</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 divide-y divide-outline-variant/30 shadow-[0_1px_3px_rgba(23,35,29,0.04)] overflow-hidden"><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-[19px]">shopping_basket</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">পাইকারি চাল ও ডাল বিক্রয়</div><div class="text-[11px] text-on-surface-variant mt-0.5">ক্যাশিয়ার ১ • #INV-4921 • ০৫:২০ PM</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#16A36A] block leading-tight">+৳১২,৫০০</span><span class="text-[10px] text-on-surface-variant">আয় (নগদ)</span></div></div><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-[#E2136E]/10 flex items-center justify-center text-[#E2136E] shrink-0"><span class="material-symbols-outlined text-[19px]">send_to_mobile</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">বিকাশ ক্যাশ ইন <span class="text-[10px] text-[#E2136E] font-medium">(বিকাশ)</span></div><div class="text-[11px] text-on-surface-variant mt-0.5">গ্রাহক: মো: রফিকুল • ০৪:১৫ PM</div><div class="text-[10px] text-primary font-medium mt-0.5">কমিশন: +৳২০.৫০</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#16A36A] block leading-tight">+৳৫,০২০.৫০</span><span class="text-[10px] text-on-surface-variant">এমএফএস লেনদেন</span></div></div><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-[#DC4545]/10 flex items-center justify-center text-[#DC4545] shrink-0"><span class="material-symbols-outlined text-[19px]">bolt</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">পল্লি বিদ্যুৎ বিল পরিশোধ</div><div class="text-[11px] text-on-surface-variant mt-0.5">ক্যাশ ড্রয়ার • ০২:৩০ PM</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#DC4545] block leading-tight">-৳১,৮৫০</span><span class="text-[10px] text-on-surface-variant">দোকান খরচ</span></div></div><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary shrink-0"><span class="material-symbols-outlined text-[19px]">history_edu</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">বাকির টাকা আদায়</div><div class="text-[11px] text-on-surface-variant mt-0.5">হাজী আবুল কাশেম • নগদ • ০১:১০ PM</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#16A36A] block leading-tight">+৳২,৫০০</span><span class="text-[10px] text-on-surface-variant">বাকি জমা</span></div></div><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant shrink-0"><span class="material-symbols-outlined text-[19px]">inventory_2</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">টোকরি দৈনিক ভাড়া আদায়</div><div class="text-[11px] text-on-surface-variant mt-0.5">কাশে খালাসী • নগদ • ১১:৪৫ AM</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#16A36A] block leading-tight">+৳৮০</span><span class="text-[10px] text-on-surface-variant">অন্যান্য আয়</span></div></div><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-[#00A3E0]/10 flex items-center justify-center text-[#00A3E0] shrink-0"><span class="material-symbols-outlined text-[19px]">phonelink_ring</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">জিপি ফ্লেক্সিলোড বিক্রি</div><div class="text-[11px] text-on-surface-variant mt-0.5">১০:১৫ AM • লাভ: +৳২.৮০</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#16A36A] block leading-tight">+৳১০০</span><span class="text-[10px] text-on-surface-variant">রিচার্জ</span></div></div><div class="p-3 hover:bg-[#F6F8F7] transition-colors flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-[#DC4545]/10 flex items-center justify-center text-[#DC4545] shrink-0"><span class="material-symbols-outlined text-[19px]">bakery_dining</span></div><div><div class="text-[13px] font-semibold text-on-surface leading-tight">সকালের নাস্তা ও চা খরচ</div><div class="text-[11px] text-on-surface-variant mt-0.5">স্টাফ রিফ্রেশমেন্ট • ০৯:০০ AM</div></div></div><div class="text-right"><span class="text-[14px] font-bold text-[#DC4545] block leading-tight">-৳১৮০</span><span class="text-[10px] text-on-surface-variant">দৈনিক খরচ</span></div></div></div>
+</div>
+</main>
+<!-- SECTION 6: Floating Dual Entry Actions (+ নতুন আয় / - নতুন ব্যয়) -->
+<div class="fixed bottom-[68px] left-0 w-full z-40 flex justify-center pointer-events-none"><div class="w-full max-w-[390px] px-margin-mobile flex gap-2.5 pointer-events-auto"><button class="flex-1 h-11 bg-primary hover:bg-[#176B4D] active:scale-98 text-white rounded-xl font-semibold text-[13px] flex items-center justify-center gap-1.5 shadow-md transition-all"><span class="material-symbols-outlined text-[18px]">add</span><span>+ নতুন আয় এন্ট্রি</span></button><button class="flex-1 h-11 bg-[#DC4545] hover:bg-[#ba1a1a] active:scale-98 text-white rounded-xl font-semibold text-[13px] flex items-center justify-center gap-1.5 shadow-md transition-all"><span class="material-symbols-outlined text-[18px]">remove</span><span>- নতুন ব্যয় এন্ট্রি</span></button></div></div>
+<!-- SHARED COMPONENT: BottomNavBar (Exact JSON Specification & Semantic Active State on 'হিসাব') -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs h-16 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-2px_6px_rgba(23,35,29,0.06)] dark:shadow-none">
+<!-- Item 0: হোম (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">হোম</span>
+</a>
+<!-- Item 1: হিসাব (ACTIVE MATCH FOR DAILY HISAB LEDGER SCREEN) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-surface-container dark:bg-surface-container-high rounded-full px-space-md py-space-xs font-semibold hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_balance_wallet" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-0.5">হিসাব</span>
+</a>
+<!-- Item 2: গ্রাহক (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="group">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">গ্রাহক</span>
+</a>
+<!-- Item 3: রিপোর্ট (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="bar_chart">bar_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">রিপোর্ট</span>
+</a>
+<!-- Item 4: মেনু (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-xs py-space-xs hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu">menu</span>
+<span class="text-label-sm font-label-sm mt-0.5">মেনু</span>
+</a>
+</nav>
+</div>
+
+
+</body></html>

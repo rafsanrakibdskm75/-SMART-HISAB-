@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Hisab - বাকি খাতা ও কাস্টমার</title>
+<!-- Fonts: Inter & Noto Sans Bengali / Noto Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#86d0f3",
+            "surface-container-high": "#ddece2",
+            "on-primary-fixed": "#002114",
+            "surface-tint": "#176b4d",
+            "primary-fixed-dim": "#89d6b1",
+            "primary": "#005138",
+            "on-primary-container": "#9ae9c3",
+            "on-tertiary-fixed-variant": "#743230",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#005138",
+            "on-error": "#ffffff",
+            "on-surface": "#121e18",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d8e6dc",
+            "inverse-surface": "#27332d",
+            "tertiary-fixed-dim": "#ffb3af",
+            "secondary": "#006685",
+            "secondary-fixed": "#bfe9ff",
+            "surface-container": "#e3f1e7",
+            "on-error-container": "#93000a",
+            "surface-bright": "#effdf3",
+            "outline-variant": "#bec9c1",
+            "on-surface-variant": "#3f4943",
+            "primary-fixed": "#a4f3cc",
+            "on-tertiary-container": "#ffcdca",
+            "tertiary-container": "#924946",
+            "primary-container": "#176b4d",
+            "surface-variant": "#d8e6dc",
+            "on-primary": "#ffffff",
+            "background": "#effdf3",
+            "on-tertiary-fixed": "#3c0709",
+            "secondary-container": "#91dbff",
+            "tertiary": "#753230",
+            "surface-container-low": "#e9f7ed",
+            "surface-dim": "#cfddd4",
+            "inverse-on-surface": "#e6f4ea",
+            "inverse-primary": "#89d6b1",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#001f2a",
+            "on-secondary-container": "#00617f",
+            "tertiary-fixed": "#ffdad7",
+            "outline": "#6f7a73",
+            "surface": "#effdf3",
+            "on-background": "#121e18",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#004d65"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-md": "0.75rem",
+            "margin-mobile": "0.875rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-2xs": "0.125rem"
+          },
+          "fontFamily": {
+            "title-sm": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-lg": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "label-lg": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "title-md": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "currency-display": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "label-md": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-sm": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-md": ["Noto Sans", "Noto Sans Bengali", "sans-serif"],
+            "label-sm": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "headline-lg": ["Inter", "Noto Sans Bengali", "sans-serif"],
+            "body-sm": ["Noto Sans", "Noto Sans Bengali", "sans-serif"]
+          },
+          "fontSize": {
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "currency-display": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (Android 390px Max) -->
+<div class="w-full max-w-[390px] min-h-screen flex flex-col bg-background relative pb-[104px]">
+<!-- TopAppBar Component (from JSON specification) -->
+<header class="bg-surface-container-lowest shadow-sm flex justify-between items-center w-full px-margin-mobile py-space-sm sticky top-0 z-40">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm overflow-hidden border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="storefront">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-title-md font-title-md font-semibold text-on-surface leading-tight">মেসার্স রহমান ট্রেডার্স</h1>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span> বাকি খাতা ও কাস্টমার
+          </span>
+</div>
+</div>
+<button aria-label="Notifications" class="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors duration-150 active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error border border-surface-container-lowest"></span>
+</button>
+</header>
+<!-- Sub-header: Search & Add Customer Action -->
+<div class="px-margin-mobile pt-space-md pb-space-sm flex flex-col gap-space-sm"><div class="flex items-center gap-2"><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="search">search</span><input class="w-full h-11 pl-9 pr-9 rounded-xl border border-outline-variant/60 bg-surface-container-lowest text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-xs transition-all" placeholder="গ্রাহকের নাম বা মোবাইল নম্বর খুঁজুন..." type="text"/><button aria-label="Voice Search" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="mic">mic</span></button></div><button class="h-11 px-3.5 bg-primary text-on-primary rounded-xl flex items-center gap-1.5 active:scale-95 transition-transform shadow-sm shrink-0 font-title-sm font-semibold"><span class="material-symbols-outlined text-[20px]" data-icon="person_add">person_add</span><span class="text-[13px]">+ কাস্টমার</span></button></div></div>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile flex flex-col gap-space-md"><!-- Premium Baki Overview Card --><section class="bg-primary text-on-primary rounded-2xl p-4 shadow-[0px_4px_16px_rgba(23,107,77,0.22)] relative overflow-hidden"><div class="flex justify-between items-start mb-2"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-primary-fixed" data-icon="account_balance_wallet">account_balance_wallet</span><span class="text-label-md font-label-md font-semibold text-primary-fixed">মোট বাকি পাওনা (Total Due)</span></div><span class="bg-surface-container-lowest/15 backdrop-blur-sm text-primary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded-full border border-primary-fixed/20">৩৮ জন খরিদ্দার</span></div><div class="flex items-baseline gap-1.5 mb-3.5"><span class="text-[32px] font-bold tracking-tight text-surface-container-lowest leading-none">৳৬৭,৯০০</span><span class="text-[12px] text-primary-fixed-dim font-medium">বকেয়া সর্বমোট</span></div><!-- Unified Sub-metrics Row in Card --><div class="pt-3 border-t border-primary-fixed/20 grid grid-cols-2 gap-2 text-[12px]"><div class="flex flex-col"><span class="text-primary-fixed-dim text-[11px] font-medium flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed inline-block"></span> এই মাসে আদায়</span><span class="font-bold text-surface-container-lowest text-[14px] mt-0.5">৳৪২,৪০০</span></div><div class="flex flex-col border-l border-primary-fixed/20 pl-2.5"><span class="text-tertiary-fixed text-[11px] font-medium flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error inline-block"></span> মেয়াদোত্তীর্ণ বাকি</span><span class="font-bold text-tertiary-fixed text-[14px] mt-0.5">৳১২,১৫০</span></div></div></section><!-- Quick Actions Bar (দ্রুত কাজ) --><section class="bg-surface-container-lowest rounded-2xl p-3 border border-outline-variant/50 shadow-xs"><div class="grid grid-cols-4 gap-2 text-center"><button class="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group"><div class="w-12 h-12 rounded-2xl bg-error-container/50 text-error flex items-center justify-center group-hover:bg-error-container transition-colors shadow-xs"><span class="material-symbols-outlined text-[22px]" data-icon="remove_circle_outline">remove_circle_outline</span></div><span class="text-label-sm font-semibold text-on-surface leading-tight">বাকি দিন</span></button><button class="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group"><div class="w-12 h-12 rounded-2xl bg-primary-fixed/40 text-primary flex items-center justify-center group-hover:bg-primary-fixed transition-colors shadow-xs"><span class="material-symbols-outlined text-[22px]" data-icon="add_circle_outline">add_circle_outline</span></div><span class="text-label-sm font-semibold text-on-surface leading-tight">টাকা জমা</span></button><button class="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group"><div class="w-12 h-12 rounded-2xl bg-secondary-fixed/50 text-secondary flex items-center justify-center group-hover:bg-secondary-fixed transition-colors shadow-xs"><span class="material-symbols-outlined text-[22px]" data-icon="chat_bubble">chat_bubble</span></div><span class="text-label-sm font-semibold text-on-surface leading-tight">তাগাদা পাঠান</span></button><button class="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group"><div class="w-12 h-12 rounded-2xl bg-surface-container-high text-on-surface-variant flex items-center justify-center group-hover:bg-surface-container-highest transition-colors shadow-xs"><span class="material-symbols-outlined text-[22px]" data-icon="description">description</span></div><span class="text-label-sm font-semibold text-on-surface leading-tight">খতিয়ান রিপোর্ট</span></button></div></section><!-- Customer Ledger Section (গ্রাহক খতিয়ান) --><section class="flex flex-col gap-2.5"><!-- Filter Pills --><div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5"><button class="h-8 px-3 rounded-full bg-primary text-on-primary text-label-md font-semibold whitespace-nowrap shadow-xs">সব গ্রাহক (৩৮)</button><button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface text-label-md font-medium whitespace-nowrap border border-outline-variant/60 shadow-xs flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> মেয়াদোত্তীর্ণ (৭)</button><button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface text-label-md font-medium whitespace-nowrap border border-outline-variant/60 shadow-xs">বেশি বাকি (১৫)</button><button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface text-label-md font-medium whitespace-nowrap border border-outline-variant/60 shadow-xs">আজকের তাগাদা (৪)</button></div><!-- Customer Cards --><div class="flex flex-col gap-2.5"><!-- Customer 1: হাজী আবুল কাশেম --><div class="bg-surface-container-lowest rounded-2xl p-3.5 border border-outline-variant/50 shadow-xs hover:shadow-md transition-shadow"><div class="flex items-start justify-between mb-2"><div class="flex items-start gap-2.5"><div class="w-11 h-11 rounded-full bg-surface-container text-primary font-bold text-title-md flex items-center justify-center shrink-0 border border-outline-variant/30">হাক</div><div><div class="flex items-center gap-1.5"><h3 class="text-title-sm font-bold text-on-surface">হাজী আবুল কাশেম</h3><span class="px-1.5 py-0.5 rounded-full text-label-sm bg-primary-fixed/40 text-primary font-semibold">নিয়মিত</span></div><div class="text-body-sm text-outline flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[13px]" data-icon="call">call</span> ০১৭৩৩-১২৩৪৫৬ <span class="text-outline-variant">•</span> ধানমন্ডি</div></div></div><div class="text-right"><span class="text-label-sm text-outline block">বাকি পাওনা</span><span class="text-title-md font-bold text-error tracking-tight">৳১২,৪০০</span></div></div><div class="pt-2 border-t border-outline-variant/30 flex items-center justify-between"><div class="text-[11px] text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-primary" data-icon="check_circle">check_circle</span> শেষ জমা: <span class="font-semibold text-primary">৳২,৫০০</span> (গতকাল)</div><div class="flex items-center gap-1.5"><button class="h-7 px-2.5 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="send">send</span> তাগাদা পাঠান</button><button class="h-7 px-2.5 rounded-lg bg-primary-fixed/30 hover:bg-primary-fixed/50 text-primary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span> টাকা গ্রহণ</button></div></div></div><!-- Customer 2: মো: রফিকুল ইসলাম (Overdue) --><div class="bg-surface-container-lowest rounded-2xl p-3.5 border border-error/30 shadow-xs hover:shadow-md transition-shadow relative overflow-hidden"><div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div><div class="flex items-start justify-between pl-1 mb-2"><div class="flex items-start gap-2.5"><div class="w-11 h-11 rounded-full bg-error-container/50 text-error font-bold text-title-md flex items-center justify-center shrink-0 border border-error/20">রই</div><div><div class="flex items-center gap-1.5"><h3 class="text-title-sm font-bold text-on-surface">মো: রফিকুল ইসলাম</h3><span class="px-1.5 py-0.5 rounded-full text-label-sm bg-error-container text-error font-semibold">মেয়াদোত্তীর্ণ</span></div><div class="text-body-sm text-outline flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[13px]" data-icon="call">call</span> ০১৮১৯-৮৭৬৫৪৩ <span class="text-outline-variant">•</span> মিরপুর ১০</div></div></div><div class="text-right"><span class="text-label-sm text-outline block">বাকি পাওনা</span><span class="text-title-md font-bold text-error tracking-tight">৳৮,৭৫০</span></div></div><div class="pt-2 border-t border-outline-variant/30 flex items-center justify-between pl-1"><div class="text-[11px] text-error font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> ৩৫ দিন পার (জরুরি)</div><div class="flex items-center gap-1.5"><button class="h-7 px-2.5 rounded-lg bg-error text-on-error text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all shadow-xs"><span class="material-symbols-outlined text-[14px]" data-icon="notification_important">notification_important</span> জরুরি তাগাদা</button><button class="h-7 px-2.5 rounded-lg bg-primary-fixed/30 hover:bg-primary-fixed/50 text-primary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span> টাকা গ্রহণ</button></div></div></div><!-- Customer 3: মা স্টোর - মো: সোহেল --><div class="bg-surface-container-lowest rounded-2xl p-3.5 border border-outline-variant/50 shadow-xs hover:shadow-md transition-shadow"><div class="flex items-start justify-between mb-2"><div class="flex items-start gap-2.5"><div class="w-11 h-11 rounded-full bg-secondary-fixed/40 text-secondary font-bold text-title-md flex items-center justify-center shrink-0 border border-outline-variant/30">মা</div><div><div class="flex items-center gap-1.5"><h3 class="text-title-sm font-bold text-on-surface">মা স্টোর - মো: সোহেল</h3><span class="px-1.5 py-0.5 rounded-full text-label-sm bg-surface-container text-on-surface-variant font-medium">পাইকারি ক্রেতা</span></div><div class="text-body-sm text-outline flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[13px]" data-icon="call">call</span> ০১৯১২-৫৬৭৮৯০</div></div></div><div class="text-right"><span class="text-label-sm text-outline block">বাকি পাওনা</span><span class="text-title-md font-bold text-error tracking-tight">৳১৫,০০০</span></div></div><div class="pt-2 border-t border-outline-variant/30 flex items-center justify-between"><div class="text-[11px] text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-outline" data-icon="history">history</span> শেষ বাকি: ৩ দিন আগে</div><div class="flex items-center gap-1.5"><button class="h-7 px-2.5 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="send">send</span> তাগাদা পাঠান</button><button class="h-7 px-2.5 rounded-lg bg-primary-fixed/30 hover:bg-primary-fixed/50 text-primary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span> টাকা গ্রহণ</button></div></div></div><!-- Customer 4: কামরুল হাসান --><div class="bg-surface-container-lowest rounded-2xl p-3.5 border border-outline-variant/50 shadow-xs hover:shadow-md transition-shadow"><div class="flex items-start justify-between mb-2"><div class="flex items-start gap-2.5"><div class="w-11 h-11 rounded-full bg-surface-container text-primary font-bold text-title-md flex items-center justify-center shrink-0 border border-outline-variant/30">কা</div><div><div class="flex items-center gap-1.5"><h3 class="text-title-sm font-bold text-on-surface">কামরুল হাসান</h3><span class="px-1.5 py-0.5 rounded-full text-label-sm bg-primary-fixed/40 text-primary font-semibold">নিয়মিত খরিদ্দার</span></div><div class="text-body-sm text-outline flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[13px]" data-icon="call">call</span> ০১৭৫০-৯৮৭৬১০</div></div></div><div class="text-right"><span class="text-label-sm text-outline block">বাকি পাওনা</span><span class="text-title-md font-bold text-error tracking-tight">৳৩,২০০</span></div></div><div class="pt-2 border-t border-outline-variant/30 flex items-center justify-between"><div class="text-[11px] text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-primary" data-icon="verified">verified</span> স্বাভাবিক লেনদেন</div><div class="flex items-center gap-1.5"><button class="h-7 px-2.5 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="send">send</span> তাগাদা পাঠান</button><button class="h-7 px-2.5 rounded-lg bg-primary-fixed/30 hover:bg-primary-fixed/50 text-primary text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-all"><span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span> টাকা গ্রহণ</button></div></div></div></div></section></main>
+<!-- Contextual Centered FAB (+ লেনদেন) Docked Above Nav -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-40"><button class="h-12 px-5 bg-primary text-on-primary rounded-full shadow-[0px_6px_20px_rgba(23,107,77,0.35)] flex items-center gap-2 active:scale-95 transition-transform duration-100 border border-primary-fixed/20 hover:bg-primary-container font-title-sm font-bold"><span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span><span class="tracking-wide text-[13px]">+ নতুন বাকি যুক্ত করুন</span></button></div>
+<!-- BottomNavBar Component (from JSON specification) -->
+<!-- Active State Logic: 'গ্রাহক' (Customer) tab is selected (3rd destination in JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs h-16 bg-surface-container-lowest shadow-[0_-2px_6px_rgba(23,35,29,0.06)] border-t border-outline-variant/40"><a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1 px-2 active:scale-95" href="#"><span class="material-symbols-outlined text-[22px]" data-icon="home">home</span><span class="text-[11px] mt-0.5 font-medium">হোম</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1 px-2 active:scale-95" href="#"><span class="material-symbols-outlined text-[22px]" data-icon="receipt_long">receipt_long</span><span class="text-[11px] mt-0.5 font-medium">হিসাব</span></a><a class="flex flex-col items-center justify-center text-primary bg-primary-fixed/30 rounded-2xl px-3 py-1 font-bold active:scale-95 transition-transform" href="#"><span class="material-symbols-outlined text-[22px]" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span><span class="text-[11px] mt-0.5">গ্রাহক</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1 px-2 active:scale-95" href="#"><span class="material-symbols-outlined text-[22px]" data-icon="bar_chart">bar_chart</span><span class="text-[11px] mt-0.5 font-medium">রিপোর্ট</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1 px-2 active:scale-95" href="#"><span class="material-symbols-outlined text-[22px]" data-icon="menu">menu</span><span class="text-[11px] mt-0.5 font-medium">মেনু</span></a></nav>
+</div>
+</body></html>
